@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {HashRouter as Router, Route, Switch} from "react-router-dom";
+import './index.css';
+import Home from './pages/home'
+import Genres from './pages/genres/genres'
+import Genre from './pages/genres/genre'
+import Nav from "./components/Nav";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+    return (
+        <div>
+            <div className={"flex relative items-start max-w-6xl mx-auto"}>
+            <Router>
+                <Nav/>
+                <Route
+                    exact
+                    path={'/'}
+                    component={Home}
+                />
+                <Route
+                    path={'/title/:id'}
+                    component={Home}
+                />
+                <Switch>
+                    <Route
+                        path={'/genres/:id'}
+                        component={Genre}
+                        render={(props) => <Genre content={'hi'} {...props} />}
+                    />
+                    <Route
+                        path={'/genres'}
+                        component={Genres}
+                    />
+                </Switch>
+            </Router>
+            </div>
+        </div>
+    );
 }
 
 export default App;

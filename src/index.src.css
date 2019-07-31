@@ -1,0 +1,45 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    @apply w-full px-6;
+    max-width: inherit;
+}
+
+@screen lg {
+    .container {
+        @apply w-2/3 ml-auto;
+    }
+}
+
+.loader:before {
+    content: "/";
+    text-shadow: 0 0 10px rgba(255, 255, 255, .8);
+    animation: load .5s linear infinite;
+}
+
+@keyframes load {
+    0% {
+        content: "/";
+    }
+
+    25% {
+        content: "–";
+    }
+
+    50% {
+        content: "\005C";
+    }
+
+    75% {
+        content: "|";
+    }
+}
