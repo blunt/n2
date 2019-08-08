@@ -1,20 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {slugify} from "../services/Utilities"
+import {netflixUrl, trailerUrl, trim} from "../services/Utilities"
+import Button from "./Button";
 
 
 const ListItem = (props) => {
-    const netflixUrl = (id) => {
-        return "https://www.netflix.com/watch/" + id
-    }
 
-    const item_url = "/title/" + slugify(props.item.title);
-
-    const trim = (s) => {
-        const n = s.indexOf('<');
-        s = s.substring(0, n !== -1 ? n : s.length);
-        return s
-    }
+    const item_url = "/title/" + props.item.netflixid;
 
     let listClasses = "flex pb-4 border-b"
 
@@ -40,24 +32,30 @@ const ListItem = (props) => {
             <figcaption className={"w-4/5 ml-4 flex flex-col"}>
                 <Link to={item_url}>
                     <h3
-                        className={"text-xl font-semibold mb-2"}
+                        className={"text-xl font-semibold mb-2 border-b border-transparent inline-block hover:border-white"}
                         dangerouslySetInnerHTML={{__html: props.item.title}}
                     />
                 </Link>
                 <div className={"flex flex-grow"}>
                     <div className={"flex flex-col pr-8"}>
                         <p
-                            className={"mb-4 opacity-50 leading-tight"}
+                            className={"mb-4 text-gray-500 leading-tight text-sm"}
                             dangerouslySetInnerHTML={{__html: trim(props.item.synopsis)}}
                         />
-                        <a
-                            className={"block mb-1 mt-auto mr-auto border-b hover:border-transparent"}
-                            href={netflixUrl(props.item.netflixid)}
-                        >
-                            Watch {props.item.type}
-                        </a>
+                        <div className={"mt-auto"}>
+                            <Button
+                                link={netflixUrl(props.item.netflixid)}
+                                label={"Watch " + props.item.type}
+                            />
+                            <Button
+                                type={"secondary"}
+                                linkType={"link"}
+                                link={item_url}
+                                label={"Learn more"}
+                            />
+                        </div>
                     </div>
-                    <div className={"text-right opacity-50 leading-tight"}>
+                    <div className={"text-right text-gray-500 leading-tight text-sm"}>
                         {props.item.rating > 0 &&
                             <p>{props.item.rating}</p>
                         }

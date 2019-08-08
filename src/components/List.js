@@ -5,16 +5,18 @@ import {Link} from "react-router-dom";
 
 const List = (props) => {
     return (
-        <section>
+        <section className={"mb-12"}>
             <header className={"sticky top-0 mb-4 border-b border-gray-800 bg-black z-10 text-xs"}>
                 <div className={"border-t-2 border-white py-4 flex"}>
-                    <h2 className={"uppercase"}>{props.title}</h2>
-                    <Link
-                        className={"ml-auto border-b hover:border-transparent"}
-                        to={props.page}
-                    >
-                        View all
-                    </Link>
+                    <h2>{props.title}</h2>
+                    {props.page &&
+                        <Link
+                            className={"ml-auto border-b border-transparent hover:border-white"}
+                            to={props.page}
+                        >
+                            View all
+                        </Link>
+                    }
                 </div>
             </header>
             <section>

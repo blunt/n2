@@ -1,0 +1,761 @@
+{
+  "RESULT":{
+    "nfinfo":{
+      "image1":"https://occ-0-1007-1360.1.nflxso.net/dnm/api/v6/XsrytRUxks8BtTRf9HNlZkW2tvY/AAAABTLtbtQ89L5hDBMKi1HpbrFTVdCTQI74uD8gu7L6zDotoYjLGcCoR4GwmWZjNLjZA2xh2oNkXmy4WJUOglUwl8xcfybm15364oJCg8vD7afLLjkGVkqEqRv0NQu-EA.jpg?r=e2a",
+      "title":"D.L. Hughley: Contrarian",
+      "synopsis":"D.L. Hughley riffs on hot-button political issues, celebrity scandals, his mother&#39;s tough love and more in a rapid-fire stand-up show in Philadelphia.",
+      "matlevel":"",
+      "matlabel":"Recommended for ages 16 and up",
+      "avgrating":"0",
+      "type":"movie",
+      "updated":"2019-08-02 22:53:20",
+      "unogsdate":"2018-09-18 07:03:02",
+      "released":"2018",
+      "netflixid":"80213654",
+      "runtime":"58m",
+      "image2":"https://occ-0-1007-1360.1.nflxso.net/dnm/api/v6/XsrytRUxks8BtTRf9HNlZkW2tvY/AAAABTLtbtQ89L5hDBMKi1HpbrFTVdCTQI74uD8gu7L6zDotoYjLGcCoR4GwmWZjNLjZA2xh2oNkXmy4WJUOglUwl8xcfybm15364oJCg8vD7afLLjkGVkqEqRv0NQu-EA.jpg?r=e2a",
+      "download":"0"
+    },
+    "imdbinfo":{
+      "rating":"6.5",
+      "votes":"431",
+      "metascore":"N/A",
+      "genre":"Comedy",
+      "awards":"N/A",
+      "runtime":"58 min",
+      "plot":"Hughley keeps his audience in hysterics as he tells it like it is about the hypocrisy of racism in America, being a man during the #MeToo movement, why cell phones are ruining relationships, and parents who don&amp;#39;t follow warning signs.",
+      "country":"USA",
+      "language":"English",
+      "imdbid":"tt8426270"
+    },
+    "mgname":[
+      "Stand-up Comedy & Talk Shows",
+      "Stand-up Comedy",
+      "Comedies"
+    ],
+    "Genreid":[
+      "1516534",
+      "11559",
+      "6548"
+    ],
+    "people":[
+      {
+        "actor":[
+          "D.L. Hughley",
+          "Steve Hughley",
+          "Mark Hughley",
+          "Mike Hughley",
+          "Bob Hughley"
+        ]
+      },
+      {
+        "creator":[
+          "Jay Chapman"
+        ]
+      },
+      {
+        "director":[
+          "Jay Chapman"
+        ]
+      }
+    ],
+    "country":[
+      {
+        "country":"Argentina ",
+        "ccode":"ar",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Italian",
+          "English",
+          "Spanish",
+          "German",
+          "Arabic"
+        ],
+        "cid":"21",
+        "islive":"yes"
+      },
+      {
+        "country":"Australia ",
+        "ccode":"au",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Traditional Chinese",
+          "Greek",
+          "Simplified Chinese",
+          "English",
+          "Italian"
+        ],
+        "cid":"23",
+        "islive":"yes"
+      },
+      {
+        "country":"Belgium ",
+        "ccode":"be",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Dutch",
+          "French",
+          "English",
+          "German"
+        ],
+        "cid":"26",
+        "islive":"yes"
+      },
+      {
+        "country":"Brazil ",
+        "ccode":"br",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Italian",
+          "German",
+          "French",
+          "English",
+          "Brazilian Portuguese"
+        ],
+        "cid":"29",
+        "islive":"yes"
+      },
+      {
+        "country":"Canada ",
+        "ccode":"ca",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "English",
+          "Italian",
+          "French",
+          "Spanish",
+          "German"
+        ],
+        "cid":"33",
+        "islive":"yes"
+      },
+      {
+        "country":"Czech Republic ",
+        "ccode":"cz",
+        "seasons":"",
+        "new":"2018-09-19",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Polish",
+          "English",
+          "German"
+        ],
+        "cid":"307",
+        "islive":"yes"
+      },
+      {
+        "country":"France ",
+        "ccode":"fr",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "French",
+          "European Spanish",
+          "English",
+          "German",
+          "Arabic"
+        ],
+        "cid":"45",
+        "islive":"yes"
+      },
+      {
+        "country":"Germany ",
+        "ccode":"de",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "French",
+          "Russian",
+          "German",
+          "English",
+          "Turkish"
+        ],
+        "cid":"39",
+        "islive":"yes"
+      },
+      {
+        "country":"Greece ",
+        "ccode":"gr",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Turkish",
+          "Greek",
+          "German",
+          "French",
+          "English"
+        ],
+        "cid":"327",
+        "islive":"yes"
+      },
+      {
+        "country":"Hong Kong ",
+        "ccode":"hk",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Traditional Chinese",
+          "English",
+          "Simplified Chinese"
+        ],
+        "cid":"331",
+        "islive":"yes"
+      },
+      {
+        "country":"Hungary ",
+        "ccode":"hu",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "German",
+          "French",
+          "Romanian",
+          "English"
+        ],
+        "cid":"334",
+        "islive":"yes"
+      },
+      {
+        "country":"Iceland ",
+        "ccode":"is",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "English",
+          "Danish"
+        ],
+        "cid":"265",
+        "islive":"yes"
+      },
+      {
+        "country":"India ",
+        "ccode":"in",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "English"
+        ],
+        "cid":"337",
+        "islive":"yes"
+      },
+      {
+        "country":"Israel ",
+        "ccode":"il",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Hebrew",
+          "Romanian",
+          "Russian",
+          "English",
+          "Arabic"
+        ],
+        "cid":"336",
+        "islive":"yes"
+      },
+      {
+        "country":"Italy ",
+        "ccode":"it",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Italian",
+          "Greek",
+          "English",
+          "German",
+          "French"
+        ],
+        "cid":"269",
+        "islive":"yes"
+      },
+      {
+        "country":"Japan ",
+        "ccode":"jp",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "English",
+          "Korean",
+          "Japanese",
+          "Simplified Chinese",
+          "Portuguese"
+        ],
+        "cid":"267",
+        "islive":"yes"
+      },
+      {
+        "country":"Lithuania ",
+        "ccode":"lt",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "English",
+          "Russian",
+          "German"
+        ],
+        "cid":"357",
+        "islive":"yes"
+      },
+      {
+        "country":"Mexico ",
+        "ccode":"mx",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Spanish",
+          "Arabic",
+          "German",
+          "Greek",
+          "English"
+        ],
+        "cid":"65",
+        "islive":"yes"
+      },
+      {
+        "country":"Netherlands ",
+        "ccode":"nl",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "European Spanish",
+          "French",
+          "German",
+          "English",
+          "Dutch"
+        ],
+        "cid":"67",
+        "islive":"yes"
+      },
+      {
+        "country":"Poland ",
+        "ccode":"pl",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "German",
+          "Polish",
+          "English",
+          "Russian"
+        ],
+        "cid":"392",
+        "islive":"yes"
+      },
+      {
+        "country":"Portugal ",
+        "ccode":"pt",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "English",
+          "European Spanish",
+          "Portuguese",
+          "French"
+        ],
+        "cid":"268",
+        "islive":"yes"
+      },
+      {
+        "country":"Romania ",
+        "ccode":"ro",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "French",
+          "Romanian",
+          "European Spanish",
+          "German",
+          "English"
+        ],
+        "cid":"400",
+        "islive":"yes"
+      },
+      {
+        "country":"Russia",
+        "ccode":"ru",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Russian",
+          "English",
+          "Finnish"
+        ],
+        "cid":"402",
+        "islive":"yes"
+      },
+      {
+        "country":"Singapore ",
+        "ccode":"sg",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Traditional Chinese",
+          "English",
+          "Simplified Chinese"
+        ],
+        "cid":"408",
+        "islive":"yes"
+      },
+      {
+        "country":"Slovakia ",
+        "ccode":"sk",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Polish",
+          "German",
+          "English"
+        ],
+        "cid":"412",
+        "islive":"yes"
+      },
+      {
+        "country":"South Africa",
+        "ccode":"za",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "English",
+          "Swahili"
+        ],
+        "cid":"447",
+        "islive":"yes"
+      },
+      {
+        "country":"South Korea",
+        "ccode":"kr",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Korean",
+          "English"
+        ],
+        "cid":"348",
+        "islive":"yes"
+      },
+      {
+        "country":"Spain ",
+        "ccode":"es",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "European Spanish",
+          "Arabic",
+          "English",
+          "French",
+          "Romanian"
+        ],
+        "cid":"270",
+        "islive":"yes"
+      },
+      {
+        "country":"Sweden ",
+        "ccode":"se",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Finnish",
+          "Swedish",
+          "Norwegian",
+          "English",
+          "German"
+        ],
+        "cid":"73",
+        "islive":"yes"
+      },
+      {
+        "country":"Switzerland ",
+        "ccode":"ch",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Portuguese",
+          "Italian",
+          "German",
+          "French",
+          "English"
+        ],
+        "cid":"34",
+        "islive":"yes"
+      },
+      {
+        "country":"Thailand ",
+        "ccode":"th",
+        "seasons":"",
+        "new":"2019-07-21",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Thai",
+          "Traditional Chinese",
+          "Simplified Chinese",
+          "English"
+        ],
+        "cid":"425",
+        "islive":"yes"
+      },
+      {
+        "country":"United Kingdom",
+        "ccode":"gb",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Traditional Chinese",
+          "English",
+          "French",
+          "Polish",
+          "Arabic"
+        ],
+        "cid":"46",
+        "islive":"yes"
+      },
+      {
+        "country":"United States",
+        "ccode":"us",
+        "seasons":"",
+        "new":"2019-07-20",
+        "expires":"",
+        "seasondet":[
+          ""
+        ],
+        "audio":[
+          "English [Original]"
+        ],
+        "subs":[
+          "Traditional Chinese",
+          "French",
+          "Simplified Chinese",
+          "Spanish",
+          "English"
+        ],
+        "cid":"78",
+        "islive":"yes"
+      }
+    ]
+  }
+}

@@ -4,7 +4,8 @@ import {Route} from "react-router-dom";
 
 import Loading from "../../components/Loading";
 import {Link} from "react-router-dom";
-import Genre from "./genre";
+import Genre from "./Genre";
+import PageHeader from "../../components/PageHeader";
 
 const Genres = () => {
 
@@ -13,17 +14,16 @@ const Genres = () => {
 
     return (
         <div className={"container"}>
-            <div className={"mt-6"}>
-                <div className={"mb-10"}>
-                    <Link
-                        to={"/"}
-                        className={"mr-1 text-gray-500 hover:text-white"}
-                    >
-                        Home
-                    </Link>
+            <div>
+                <PageHeader
+                    home={false}
+                    // keyword={keyword}
+                    // handleKeyDown={handleKeyDown}
+                    // setKeyword={setKeyword}
+                >
                     <span className={"mr-1 text-gray-800"}>/</span>
                     Genres
-                </div>
+                </PageHeader>
                 {loading ? (
                         <Loading />
                     ) : (

@@ -1,30 +1,76 @@
 import data from "../mocks/new";
 import genres from "../mocks/genres";
-// import axios from 'axios'
+import title from "../mocks/title";
+import axios from 'axios'
 
-// const proxyUrl = '',
-//     apiUrl = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get:new7:CA&p=1&t=ns&st=adv',
-//     genresEndpoint = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/api.cgi?t=genres',
-//     apiKey = '3adfd0f105mshd37f672cb2a6ef6p1cc404jsn3c93ad7906e0',
-//     apiHost = 'unogs-unogs-v1.p.rapidapi.com';
+const proxyUrl = '',
+    apiUrl = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get:new7:CA&p=1&t=ns&st=adv',
+    genresEndpoint = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/api.cgi?t=genres',
+    searchEndpoint = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi',
+    apiKey = '3adfd0f105mshd37f672cb2a6ef6p1cc404jsn3c93ad7906e0',
+    apiHost = 'unogs-unogs-v1.p.rapidapi.com';
 
-// const apiConfig = {
-//     headers: {
-//         "X-RapidAPI-Host": apiHost,
-//         "X-RapidAPI-Key": apiKey // Replace with valid key
-//     },
-//     params: {
-//         // "daysback": "7",
-//         // "countryid": "US",
-//         // "page": "1",
-//     }
-// }
+const apiConfig = {
+    headers: {
+        "X-RapidAPI-Host": apiHost,
+        "X-RapidAPI-Key": apiKey // Replace with valid key
+    },
+    params: {
+        // "daysback": "7",
+        // "countryid": "US",
+        // "page": "1",
+    }
+}
 
 const getNew = async () => {
         // const allContent = await axios.get(apiUrl, apiConfig);
         // const content = allContent.data.ITEMS;
         const content = data.ITEMS
         return content;
+}
+
+const getResults = async (keyword) => {
+    const allContent = await axios.get(searchEndpoint, {
+        headers: {
+            "X-RapidAPI-Host": apiHost,
+            "X-RapidAPI-Key": apiKey
+        },
+        params: {
+            "q": keyword + "-!1900,2018-!0,5-!0,10-!-!Any-!Any-!Any-!gt100-!{downloadable}",
+            "t": "ns",
+            "cl": "all",
+            "st": "adv",
+            "ob": "Relevance",
+            "p": "1",
+            "sa": "and"
+        }
+    });
+    // console.log(allContent.data.ITEMS)
+    const content = allContent.data.ITEMS;
+    // const content = data.ITEMS
+    return content;
+}
+
+const getGenre = async (genreIds) => {
+    const allContent = await axios.get(searchEndpoint, {
+        headers: {
+            "X-RapidAPI-Host": apiHost,
+            "X-RapidAPI-Key": apiKey
+        },
+        params: {
+            "q": "-!1900,2018-!0,5-!0,10-!" + genreIds + "-!Any-!Any-!Any-!gt100-!{downloadable}",
+            "t": "ns",
+            "cl": "all",
+            "st": "adv",
+            "ob": "Relevance",
+            "p": "1",
+            "sa": "and"
+        }
+    });
+    // console.log(allContent.data.ITEMS)
+    const content = allContent.data.ITEMS;
+    // const content = data.ITEMS
+    return content;
 }
 
 const getGenres = async () => {
@@ -36,4 +82,21 @@ const getGenres = async () => {
 
 }
 
-export {getNew, getGenres}
+const getTitle = async (id) => {
+    // const allContent = await axios.get(searchEndpoint, {
+    //     headers: {
+    //         "X-RapidAPI-Host": apiHost,
+    //         "X-RapidAPI-Key": apiKey
+    //     },
+    //     params: {
+    //         "t": "loadvideo",
+    //         "q": id
+    //     }
+    // });
+    // console.log(allContent)
+    // const content = allContent.data.RESULT;
+    const content = title.RESULT
+    return content;
+}
+
+export {getNew, getGenres, getTitle, getResults, getGenre}

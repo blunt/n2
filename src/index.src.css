@@ -20,6 +20,10 @@ body {
     }
 }
 
+.people-item:last-child {
+    border-bottom: 0;
+}
+
 .loader:before {
     content: "/";
     text-shadow: 0 0 10px rgba(255, 255, 255, .8);

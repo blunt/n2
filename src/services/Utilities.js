@@ -13,4 +13,18 @@ const slugify = (string) => {
         .replace(/-+$/, '') // Trim - from end of text
 }
 
-export {slugify};
+const netflixUrl = (id) => {
+    return "https://www.netflix.com/watch/" + id
+}
+
+const trailerUrl = (title) => {
+    return "https://www.youtube.com/results?search_query=" + title + "+trailer"
+}
+
+const trim = (s) => {
+    const n = s.indexOf('<');
+    s = s.substring(0, n !== -1 ? n : s.length);
+    return s
+}
+
+export {slugify, netflixUrl, trailerUrl, trim};

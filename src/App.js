@@ -1,10 +1,11 @@
 import React from 'react';
 import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import './index.css';
-import Home from './pages/home'
-import Genres from './pages/genres/genres'
-import Genre from './pages/genres/genre'
+import Home from './pages/Home'
+import Genres from './pages/genres/Genres'
+import Genre from './pages/genres/Genre'
 import Nav from "./components/Nav";
+import Title from "./pages/Title";
 
 const App = () => {
 
@@ -20,7 +21,7 @@ const App = () => {
                 />
                 <Route
                     path={'/title/:id'}
-                    component={Home}
+                    component={Title}
                 />
                 <Switch>
                     <Route
