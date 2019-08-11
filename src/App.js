@@ -11,9 +11,7 @@ const App = () => {
 
     return (
         <div>
-            <div className={"flex relative items-start max-w-6xl mx-auto"}>
             <Router>
-                <Nav/>
                 <Route
                     exact
                     path={'/'}
@@ -35,7 +33,6 @@ const App = () => {
                     />
                 </Switch>
             </Router>
-            </div>
         </div>
     );
 }

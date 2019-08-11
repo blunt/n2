@@ -4,7 +4,7 @@ import {getGenres} from "../services/ApiData";
 import {slugify} from "../services/Utilities";
 
 
-const Nav = () => {
+const Nav = (props) => {
 
     const [genres, setGenres] = useState([]);
 
@@ -29,20 +29,26 @@ const Nav = () => {
                 </Link>
             </h1>
             <h2 className={"text-2xl leading-tight max-w-xs my-8"}>The fastest way to find something to watch on Netflix.</h2>
-            <nav>
+            <nav id={"genres"}>
                 {genres.slice(0,19).map((item) => {
                         const genreTitle = Object.keys(item)[0].replace('All ','');
-                        const genreUrl = '/genres/' + Object.values(item)[0].join();
+                        const genreIds = Object.values(item)[0].join();
                         return (
-                            <Link
-                                key={slugify(genreTitle)}
-                                to={genreUrl}
-                                className={"block text-sm"}
+                            <label
+                                key={genreTitle}
+                                className={"block text-sm checkbox-container"}
                             >
-                                <span className={"border-b border-transparent hover:border-white"}>
-                                    {genreTitle}
-                                </span>
-                            </Link>
+                                <input
+                                    name={genreTitle}
+                                    type={"checkbox"}
+                                    className={"border-b border-transparent hover:border-white mr-2"}
+                                    checked={props.isActive}
+                                    onChange={props.handleInputChange}
+                                    value={genreIds}
+                                />
+                                <span className={"checkmark"}></span>
+                                <span className={"label"}>{genreTitle}</span>
+                            </label>
                         )
                     }
                 )}

@@ -7582,6 +7582,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.page-container {
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  -webkit-box-align: start;
+          align-items: flex-start;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container {
   width: 100%;
   padding-left: 1.5rem;
@@ -7641,6 +7652,60 @@ body {
   75% {
     content: "|";
   }
+}
+
+/* Checkboxes */
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 1.25rem;
+  cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: #000;
+  border-width: 1px;
+  border-color: #fff;
+  margin-top: 0.25rem;
+}
+
+/* On mouse-over, add a grey background color */
+
+.checkbox-container:hover input {
+  background-color: #2d3748;
+}
+
+.checkbox-container .label {
+  border-bottom-width: 1px;
+  border-color: transparent;
+}
+
+.checkbox-container:hover .label {
+  border-color: #fff;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #fff;
 }
 
 @media (min-width: 640px) {

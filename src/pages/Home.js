@@ -6,6 +6,7 @@ import List from "../components/List";
 import Search from "../components/Search";
 import Breadcrumb from "../components/Breadcrumb";
 import PageHeader from "../components/PageHeader";
+import Nav from "../components/Nav";
 
 const Home = (props) => {
 
@@ -13,6 +14,7 @@ const Home = (props) => {
     const [loading, setLoading] = useState(true);
     const [searching, setSearching] = useState(false);
     const [searchedKeyword, setSearchedKeyword] = useState("");
+    const [genres, setGenres] = useState("");
     const [keyword, setKeyword] = useState("");
 
 
@@ -27,8 +29,8 @@ const Home = (props) => {
         });
     }
 
-    const getSearchResults = (keyword) => {
-        getResults(keyword).then((content) => {
+    const getSearchResults = (keyword, genres) => {
+        getResults(keyword, genres).then((content) => {
             try {
                 setNewContent(content);
                 setLoading(false);
@@ -45,7 +47,7 @@ const Home = (props) => {
             setLoading(true);
             setKeyword(props.location.state.keyword);
             setSearchedKeyword(props.location.state.keyword);
-            getSearchResults(props.location.state.keyword);
+            getSearchResults(props.location.state.keyword, genres);
         } else {
             setSearching(false);
             getHomeContent();
@@ -61,37 +63,88 @@ const Home = (props) => {
                 getHomeContent();
             } else {
                 setSearching(true);
-                getSearchResults(keyword);
+                getSearchResults(keyword, genres);
             }
         }
     }
 
+    if (props.location.state !== undefined) {
+        console.log('haaaai', props.location.state.genres)
+    }
+
+    const handleInputChange = (event) => {
+        let count = document.querySelectorAll("#genres :checked").length;
+        const target = event.target;
+        const value = target.value;
+        const status = target.checked;
+        const name = target.name;
+
+        if (count > 0) {
+            setSearching(true);
+            setLoading(true);
+            if (status) {
+                console.log('addd');
+                setGenres([...genres, value])
+            } else {
+                console.log('remove');
+                const newGenres = genres.filter(genre => genre === value);
+                setGenres(newGenres);
+            }
+        } else if (count == 0) {
+            setSearching(false);
+            setLoading(false);
+
+            console.log('remove');
+            const newGenres = genres.filter(genre => genre === value);
+            setGenres(newGenres);
+            getHomeContent();
+        } else if (status === false) {
+            console.log('remove');
+            const newGenres = genres.filter(genre => genre === value);
+            setGenres(newGenres);
+        }
+    }
+
+    useEffect(() => {
+        console.log('genres clicked', genres)
+        if (genres != "") {
+            getSearchResults(keyword, genres);
+        }
+    }, [genres])
+
+    console.log('genres', genres)
+
     return (
-        <div className={"container"}>
-            <div>
-                <PageHeader
-                    home={true}
-                    keyword={keyword}
-                    handleKeyDown={handleKeyDown}
-                    setKeyword={setKeyword}
-                />
-                {loading ? (
-                        <Loading />
-                    ) : (
-                        searching ? (
-                            <List
-                                title={newContent.length + ' results for ' + searchedKeyword}
-                                content={newContent}
-                            />
+        <div className={"page-container"}>
+            <Nav
+                handleInputChange={handleInputChange}
+            />
+            <div className={"container"}>
+                <div>
+                    <PageHeader
+                        home={true}
+                        keyword={keyword}
+                        handleKeyDown={handleKeyDown}
+                        setKeyword={setKeyword}
+                    />
+                    {loading ? (
+                            <Loading />
                         ) : (
-                            <List
-                                title={"New"}
-                                content={newContent}
-                                page={"/"}
-                            />
+                            searching ? (
+                                <List
+                                    title={newContent.length + ' results'}
+                                    content={newContent}
+                                />
+                            ) : (
+                                <List
+                                    title={"New"}
+                                    content={newContent}
+                                    page={"/"}
+                                />
+                            )
                         )
-                    )
-                }
+                    }
+                </div>
             </div>
         </div>
     )

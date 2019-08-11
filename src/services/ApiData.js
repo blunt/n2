@@ -29,14 +29,14 @@ const getNew = async () => {
         return content;
 }
 
-const getResults = async (keyword) => {
+const getResults = async (keyword, genres) => {
     const allContent = await axios.get(searchEndpoint, {
         headers: {
             "X-RapidAPI-Host": apiHost,
             "X-RapidAPI-Key": apiKey
         },
         params: {
-            "q": keyword + "-!1900,2018-!0,5-!0,10-!-!Any-!Any-!Any-!gt100-!{downloadable}",
+            "q": keyword + "-!1900,2018-!0,5-!0,10-!" + genres + "-!Any-!Any-!Any-!gt100-!{downloadable}",
             "t": "ns",
             "cl": "all",
             "st": "adv",
