@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {netflixUrl, trailerUrl, trim} from "../services/Utilities"
+import {netflixUrl, trim} from "../services/Utilities"
 import Button from "./Button";
 
 
@@ -20,6 +20,7 @@ const ListItem = (props) => {
         <article
             key={props.item.netflixid}
             className={listClasses}
+            onClick={props.onTitlePage}
         >
             <figure className={"w-1/5"}>
                 <Link to={item_url}>

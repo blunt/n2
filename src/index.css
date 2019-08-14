@@ -7583,14 +7583,19 @@ body {
 }
 
 .page-container {
-  display: -webkit-box;
-  display: flex;
   position: relative;
-  -webkit-box-align: start;
-          align-items: flex-start;
-  max-width: 72rem;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: start;
+            align-items: flex-start;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .container {
@@ -7605,6 +7610,10 @@ body {
     width: 66.666667%;
     margin-left: auto;
   }
+}
+
+.hide-scrollbar {
+  width: calc(100% + 20px);
 }
 
 .people-item:last-child {

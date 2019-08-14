@@ -18,7 +18,7 @@ const netflixUrl = (id) => {
 }
 
 const trailerUrl = (title) => {
-    return "https://www.youtube.com/results?search_query=" + title + "+trailer"
+    return "https://www.youtube.com/results?search_query=" + title + " official trailer"
 }
 
 const trim = (s) => {

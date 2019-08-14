@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {getNew, getResults} from '../services/ApiData'
+import { withRouter } from "react-router-dom";
 
 import Loading from "../components/Loading";
 import List from "../components/List";
-import Search from "../components/Search";
-import Breadcrumb from "../components/Breadcrumb";
 import PageHeader from "../components/PageHeader";
 import Nav from "../components/Nav";
 
@@ -13,20 +12,25 @@ const Home = (props) => {
     const [newContent, setNewContent] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searching, setSearching] = useState(false);
-    const [searchedKeyword, setSearchedKeyword] = useState("");
     const [genres, setGenres] = useState("");
     const [keyword, setKeyword] = useState("");
+    const [title, setTitle] = useState(true);
 
 
     const getHomeContent = () => {
-        getNew().then((content) => {
-            try {
-                setNewContent(content);
-                setLoading(false);
-            } catch {
-                setLoading(false);
-            }
-        });
+        if (localStorage.getItem("newContent") === null) {
+            getNew().then((content) => {
+                try {
+                    setNewContent(content);
+                    setLoading(false);
+                } catch {
+                    setLoading(false);
+                }
+            });
+        } else {
+            setNewContent(JSON.parse(localStorage.getItem("newContent") || "[]"));
+            setLoading(false);
+        }
     }
 
     const getSearchResults = (keyword, genres) => {
@@ -41,23 +45,14 @@ const Home = (props) => {
     }
 
     useEffect(() => {
-        if (props.location.state !== undefined) {
-            console.log(props.location.state.keyword);
-            setSearching(true);
-            setLoading(true);
-            setKeyword(props.location.state.keyword);
-            setSearchedKeyword(props.location.state.keyword);
-            getSearchResults(props.location.state.keyword, genres);
-        } else {
-            setSearching(false);
-            getHomeContent();
-        }
+        setSearching(false);
+        getHomeContent();
     }, []);
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
+            setTitle(false);
             setLoading(true);
-            setSearchedKeyword(keyword);
             if (keyword === "") {
                 setSearching(false);
                 getHomeContent();
@@ -68,51 +63,44 @@ const Home = (props) => {
         }
     }
 
-    if (props.location.state !== undefined) {
-        console.log('haaaai', props.location.state.genres)
+    const handleTitlePage = () => {
+        setTitle(true);
     }
 
     const handleInputChange = (event) => {
+        setTitle(false);
         let count = document.querySelectorAll("#genres :checked").length;
         const target = event.target;
         const value = target.value;
         const status = target.checked;
-        const name = target.name;
 
         if (count > 0) {
             setSearching(true);
             setLoading(true);
             if (status) {
-                console.log('addd');
                 setGenres([...genres, value])
             } else {
-                console.log('remove');
                 const newGenres = genres.filter(genre => genre === value);
                 setGenres(newGenres);
             }
-        } else if (count == 0) {
+        } else if (count === 0) {
             setSearching(false);
             setLoading(false);
 
-            console.log('remove');
             const newGenres = genres.filter(genre => genre === value);
             setGenres(newGenres);
             getHomeContent();
         } else if (status === false) {
-            console.log('remove');
             const newGenres = genres.filter(genre => genre === value);
             setGenres(newGenres);
         }
     }
 
     useEffect(() => {
-        console.log('genres clicked', genres)
-        if (genres != "") {
+        if (genres !== "") {
             getSearchResults(keyword, genres);
         }
-    }, [genres])
-
-    console.log('genres', genres)
+    }, [keyword, genres])
 
     return (
         <div className={"page-container"}>
@@ -127,20 +115,26 @@ const Home = (props) => {
                         handleKeyDown={handleKeyDown}
                         setKeyword={setKeyword}
                     />
-                    {loading ? (
-                            <Loading />
-                        ) : (
-                            searching ? (
-                                <List
-                                    title={newContent.length + ' results'}
-                                    content={newContent}
-                                />
+                    {props.location.pathname.includes('title') && title ? (
+                        props.children
+                    ) : (
+                            loading ? (
+                                <Loading />
                             ) : (
-                                <List
-                                    title={"New"}
-                                    content={newContent}
-                                    page={"/"}
-                                />
+                                searching ? (
+                                    <List
+                                        title={newContent.length + ' results'}
+                                        content={newContent}
+                                        onTitlePage={handleTitlePage}
+                                    />
+                                ) : (
+                                    <List
+                                        title={"New"}
+                                        content={newContent}
+                                        page={"/"}
+                                        onTitlePage={handleTitlePage}
+                                    />
+                                )
                             )
                         )
                     }
@@ -150,4 +144,4 @@ const Home = (props) => {
     )
 }
 
-export default Home;
+export default withRouter(Home);

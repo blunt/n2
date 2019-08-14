@@ -10,7 +10,13 @@ body {
 }
 
 .page-container {
-    @apply flex relative items-start max-w-6xl mx-auto;
+    @apply relative;
+}
+
+@screen md {
+    .page-container {
+        @apply flex items-start max-w-6xl mx-auto;
+    }
 }
 
 .container {
@@ -22,6 +28,10 @@ body {
     .container {
         @apply w-2/3 ml-auto;
     }
+}
+
+.hide-scrollbar {
+    width: calc(100% + 20px);
 }
 
 .people-item:last-child {

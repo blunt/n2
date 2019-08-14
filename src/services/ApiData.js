@@ -1,6 +1,3 @@
-import data from "../mocks/new";
-import genres from "../mocks/genres";
-import title from "../mocks/title";
 import axios from 'axios'
 
 const proxyUrl = '',
@@ -17,15 +14,15 @@ const apiConfig = {
     },
     params: {
         // "daysback": "7",
-        // "countryid": "US",
+        "countryid": "US"
         // "page": "1",
     }
 }
 
 const getNew = async () => {
-        // const allContent = await axios.get(apiUrl, apiConfig);
-        // const content = allContent.data.ITEMS;
-        const content = data.ITEMS
+        const allContent = await axios.get(apiUrl, apiConfig);
+        localStorage.setItem("newContent", JSON.stringify(allContent.data.ITEMS));
+        const content = allContent.data.ITEMS;
         return content;
 }
 
@@ -45,9 +42,7 @@ const getResults = async (keyword, genres) => {
             "sa": "and"
         }
     });
-    // console.log(allContent.data.ITEMS)
     const content = allContent.data.ITEMS;
-    // const content = data.ITEMS
     return content;
 }
 
@@ -67,35 +62,30 @@ const getGenre = async (genreIds) => {
             "sa": "and"
         }
     });
-    // console.log(allContent.data.ITEMS)
     const content = allContent.data.ITEMS;
-    // const content = data.ITEMS
     return content;
 }
 
 const getGenres = async () => {
-    // const allContent = await axios.get(genresEndpoint, apiConfig);
-    // console.log(allContent)
-    // const content = allContent.data.ITEMS;
-    const content = genres.ITEMS
+    const allContent = await axios.get(genresEndpoint, apiConfig);
+    localStorage.setItem("genres", JSON.stringify(allContent.data.ITEMS));
+    const content = allContent.data.ITEMS;
     return content;
 
 }
 
 const getTitle = async (id) => {
-    // const allContent = await axios.get(searchEndpoint, {
-    //     headers: {
-    //         "X-RapidAPI-Host": apiHost,
-    //         "X-RapidAPI-Key": apiKey
-    //     },
-    //     params: {
-    //         "t": "loadvideo",
-    //         "q": id
-    //     }
-    // });
-    // console.log(allContent)
-    // const content = allContent.data.RESULT;
-    const content = title.RESULT
+    const allContent = await axios.get(searchEndpoint, {
+        headers: {
+            "X-RapidAPI-Host": apiHost,
+            "X-RapidAPI-Key": apiKey
+        },
+        params: {
+            "t": "loadvideo",
+            "q": id
+        }
+    });
+    const content = allContent.data.RESULT;
     return content;
 }
 
