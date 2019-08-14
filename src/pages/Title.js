@@ -88,9 +88,14 @@ const Title = (props) => {
                             return (
                                 item.director !== undefined &&
                                     item.director.length > 0 &&
-                                    <PeopleItem key={item.director} label={"Director"}>
-                                        <li className={"w-1/2 pr-4"}>{item.director}</li>
-                                    </PeopleItem>
+                                        <PeopleItem key={item.director} label={"Director"}>
+                                            {item.director.map((item) => {
+                                                return (
+                                                    <li key={item} className={"w-1/2 pr-4"}>{item}</li>
+                                                )
+                                            })
+                                            }
+                                        </PeopleItem>
                             )
                         })
                         }
@@ -98,8 +103,13 @@ const Title = (props) => {
                             return (
                                 item.creator !== undefined &&
                                     item.creator.length > 0 &&
-                                        <PeopleItem key={item.creator} label={"Creator"}>
-                                            <li className={"w-1/2 pr-4"}>{item.creator}</li>
+                                        <PeopleItem key={item.creator} label={"Creators"}>
+                                            {item.creator.map((item) => {
+                                                return (
+                                                    <li key={item} className={"w-1/2 pr-4"}>{item}</li>
+                                                )
+                                            })
+                                            }
                                         </PeopleItem>
                             )
                         })
