@@ -1,5 +1,6 @@
 {
-  "name": "netflix-2",
+  "name": "n2",
+  "homepage": "https://blunt.af/n2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

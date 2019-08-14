@@ -8,7 +8,7 @@ const App = () => {
 
     return (
         <div>
-            <Router>
+            <Router basename={'/'}>
                 <Route
                     exact
                     path={'/'}
