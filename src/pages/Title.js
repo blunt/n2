@@ -103,7 +103,7 @@ const Title = (props) => {
                             return (
                                 item.creator !== undefined &&
                                     item.creator.length > 0 &&
-                                        <PeopleItem key={item.creator} label={"Creators"}>
+                                        <PeopleItem key={item.creator} label={"Creator(s)"}>
                                             {item.creator.map((item) => {
                                                 return (
                                                     <li key={item} className={"w-1/2 pr-4"}>{item}</li>
@@ -118,7 +118,7 @@ const Title = (props) => {
                             return (
                                 item.actor !== undefined &&
                                     item.actor.length > 0 &&
-                                        <PeopleItem key={item.actor} label={"Actors"}>
+                                        <PeopleItem key={item.actor} label={"Actor(s)"}>
                                             {item.actor.map((item) => {
                                                 return (
                                                     <li key={item} className={"w-1/2 pr-4"}>{item}</li>
