@@ -109,17 +109,20 @@ const Home = (props) => {
             />
             <div className={"container"}>
                 <div>
-                    <PageHeader
-                        home={true}
-                        keyword={keyword}
-                        handleKeyDown={handleKeyDown}
-                        setKeyword={setKeyword}
-                    />
                     {props.location.pathname.includes('title') && title ? (
                         props.children
                     ) : (
-                            loading ? (
-                                <Loading />
+                        <div>
+                            <PageHeader
+                                home={true}
+                                keyword={keyword}
+                                handleKeyDown={handleKeyDown}
+                                setKeyword={setKeyword}
+                            />
+                            {loading ? (
+                                <div>
+                                    <Loading/>
+                                </div>
                             ) : (
                                 searching ? (
                                     <List
@@ -136,6 +139,8 @@ const Home = (props) => {
                                     />
                                 )
                             )
+                            }
+                        </div>
                         )
                     }
                 </div>

@@ -6,6 +6,7 @@ import DetailItem from "../components/DetailItem";
 import {netflixUrl, trailerUrl, trim} from "../services/Utilities";
 import Button from "../components/Button";
 import PeopleItem from "../components/PeopleItem";
+import PageHeader from "../components/PageHeader";
 
 const Title = (props) => {
 
@@ -25,6 +26,18 @@ const Title = (props) => {
 
     return (
         <Home>
+            <PageHeader
+                home={false}
+            >
+                {!loading &&
+                    <div className={"inline-block"}>
+                        <span className={"inline-block mr-1 text-gray-700"}>
+                            /
+                        </span>
+                        {content.nfinfo.title}
+                    </div>
+                }
+            </PageHeader>
             {loading ? (
                 <Loading />
             ) : (

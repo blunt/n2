@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Breadcrumb = (props) => {
     return (
-        <div className={"mb-8 pb-1 text-sm invisible"}>
+        <div className={"mb-8 pb-1 text-sm"}>
         {props.home ? (
                 'Home'
             ) : (

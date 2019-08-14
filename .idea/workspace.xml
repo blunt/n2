@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0d7595b4-c28f-4a42-b6e8-812f94b0150d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Breadcrumb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Breadcrumb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.src.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.src.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/genres/Genre.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/genres/Genres.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ApiData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/Utilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/Utilities.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +72,7 @@
       <workItem from="1564590789468" duration="5539000" />
       <workItem from="1565157888699" duration="71000" />
       <workItem from="1565191549113" duration="29771000" />
-      <workItem from="1565568142268" duration="8671000" />
+      <workItem from="1565568142268" duration="9418000" />
     </task>
     <servers />
   </component>
