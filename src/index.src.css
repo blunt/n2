@@ -30,6 +30,10 @@ body {
     }
 }
 
+header.sticky {
+    top: 55px;
+}
+
 .hide-scrollbar {
     width: calc(100% + 20px);
 }

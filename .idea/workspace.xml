@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0d7595b4-c28f-4a42-b6e8-812f94b0150d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PageHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.src.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.src.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Title.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,7 +77,7 @@
       <workItem from="1564590789468" duration="5539000" />
       <workItem from="1565157888699" duration="71000" />
       <workItem from="1565191549113" duration="29771000" />
-      <workItem from="1565568142268" duration="10816000" />
+      <workItem from="1565568142268" duration="12081000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@ import Search from "./Search";
 
 const PageHeader = (props) => {
     return (
-        <div className={"pt-6"}>
+        <React.Fragment>
             <Breadcrumb home={props.home}>
                 {props.children}
             </Breadcrumb>
@@ -13,7 +13,7 @@ const PageHeader = (props) => {
                 keywordChange={props.setKeyword}
                 handleKeyDown={props.handleKeyDown}
             />
-        </div>
+        </React.Fragment>
     )
 }
 

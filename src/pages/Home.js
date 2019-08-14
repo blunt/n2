@@ -112,7 +112,7 @@ const Home = (props) => {
                     {props.location.pathname.includes('title') && title ? (
                         props.children
                     ) : (
-                        <div>
+                        <div className={"pt-6"}>
                             <PageHeader
                                 home={true}
                                 keyword={keyword}
@@ -132,9 +132,8 @@ const Home = (props) => {
                                     />
                                 ) : (
                                     <List
-                                        title={"New"}
+                                        title={newContent.length + " new titles"}
                                         content={newContent}
-                                        page={"/"}
                                         onTitlePage={handleTitlePage}
                                     />
                                 )
