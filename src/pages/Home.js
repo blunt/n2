@@ -106,7 +106,7 @@ const Home = (props) => {
                 handleInputChange={handleInputChange}
             />
             <div className={"container"}>
-                <div className={"pt-16"}>
+                <div>
                     <PageHeader
                         home={true}
                         keyword={keyword}

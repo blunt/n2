@@ -5,6 +5,9 @@ import {getGenres} from "../services/ApiData";
 const Nav = (props) => {
 
     const [genres, setGenres] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [filteredGenres, setFilteredGenres] = useState([]);
+    const [finalGenres, setFinalGenres] = useState([]);
     const [keyword, setKeyword] = useState("");
 
     useEffect(() => {
@@ -12,12 +15,14 @@ const Nav = (props) => {
             getGenres().then((content) => {
                 try {
                     setGenres(content);
+                    setLoading(false);
                 } catch {
 
                 }
             })
         } else {
             setGenres(JSON.parse(localStorage.getItem("genres") || "[]"))
+            setLoading(false);
         }
     }, []);
 
@@ -26,11 +31,19 @@ const Nav = (props) => {
             const filteredGenres = genres.filter(genre =>
                 JSON.stringify(Object.keys(genre)).toLowerCase().includes(keyword)
             );
-            setGenres(filteredGenres);
+            setFilteredGenres(filteredGenres);
         } else {
-            setGenres(JSON.parse(localStorage.getItem("genres") || "[]"))
+            setFilteredGenres([])
         }
-    }, [keyword, genres])
+    }, [keyword, genres]);
+
+    useEffect( () => {
+        if (filteredGenres.length > 0) {
+            setFinalGenres(filteredGenres);
+        } else {
+            setFinalGenres(genres);
+        }
+    }, [filteredGenres, genres]);
 
     return (
         <header className={"flex flex-col p-6 md:sticky top-0 h-screen md:w-1/3 w-full"}>
@@ -57,7 +70,8 @@ const Nav = (props) => {
                 className={"relative flex-grow overflow-hidden border-b border-t border-gray-800"}
             >
                 <div className={"absolute py-4 top-0 bottom-0 overflow-y-scroll hide-scrollbar"}>
-                    {genres.map((item) => {
+                    {!loading &&
+                        finalGenres.map((item) => {
                             const genreTitle = Object.keys(item)[0];
                             const genreIds = Object.values(item)[0].join();
                             return (
