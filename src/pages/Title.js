@@ -6,7 +6,6 @@ import DetailItem from "../components/DetailItem";
 import {netflixUrl, trailerUrl, trim} from "../services/Utilities";
 import Button from "../components/Button";
 import PeopleItem from "../components/PeopleItem";
-import PageHeader from "../components/PageHeader";
 
 const Title = (props) => {
 
@@ -43,7 +42,8 @@ const Title = (props) => {
                                 <h1 className={"text-2xl mb-4"}>{content.nfinfo.title}</h1>
                                 <section className={"flex border-t border-b border-gray-900 py-3 mb-4"}>
                                     {content.imdbinfo.rating &&
-                                        <DetailItem label={"IMDb Rating"} item={content.imdbinfo.rating}/>
+                                        content.imdbinfo.rating > 0 &&
+                                            <DetailItem label={"IMDb Rating"} item={content.imdbinfo.rating}/>
                                     }
                                     {content.imdbinfo.runtime &&
                                         <DetailItem label={"Duration"} item={content.imdbinfo.runtime}/>

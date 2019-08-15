@@ -12,7 +12,7 @@ const Home = (props) => {
     const [newContent, setNewContent] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searching, setSearching] = useState(false);
-    const [genres, setGenres] = useState("");
+    const [genres, setGenres] = useState([]);
     const [keyword, setKeyword] = useState("");
     const [title, setTitle] = useState(true);
 
@@ -74,30 +74,28 @@ const Home = (props) => {
         const value = target.value;
         const status = target.checked;
 
+        if (status === true) {
+            setGenres([...genres, value])
+        } else {
+            const newGenres = genres.filter(genre =>
+                genre !== value
+            );
+            setGenres(newGenres);
+        }
+
         if (count > 0) {
             setSearching(true);
             setLoading(true);
-            if (status) {
-                setGenres([...genres, value])
-            } else {
-                const newGenres = genres.filter(genre => genre === value);
-                setGenres(newGenres);
-            }
         } else if (count === 0) {
             setSearching(false);
             setLoading(false);
-
-            const newGenres = genres.filter(genre => genre === value);
-            setGenres(newGenres);
             getHomeContent();
-        } else if (status === false) {
-            const newGenres = genres.filter(genre => genre === value);
-            setGenres(newGenres);
         }
+
     }
 
     useEffect(() => {
-        if (genres !== "") {
+        if (genres.length > 0) {
             getSearchResults(keyword, genres);
         }
     }, [keyword, genres])

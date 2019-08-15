@@ -30,7 +30,7 @@ const Nav = (props) => {
         } else {
             setGenres(JSON.parse(localStorage.getItem("genres") || "[]"))
         }
-    }, [keyword])
+    }, [keyword, genres])
 
     return (
         <header className={"flex flex-col p-6 md:sticky top-0 h-screen md:w-1/3 w-full"}>

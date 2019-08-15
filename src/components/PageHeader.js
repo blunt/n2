@@ -1,5 +1,4 @@
 import React from 'react';
-import Breadcrumb from "./Breadcrumb";
 import Search from "./Search";
 
 const PageHeader = (props) => {
