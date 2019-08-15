@@ -35,7 +35,8 @@ const getResults = async (keyword, genres) => {
         params: {
             "q": keyword + "-!1900,2018-!0,5-!0,10-!" + genres + "-!Any-!Any-!Any-!gt100-!{downloadable}",
             "t": "ns",
-            "cl": "all",
+            // "cl": "all",
+            "cl": "33", //Canadian ID
             "st": "adv",
             "ob": "Relevance",
             "p": "1",
