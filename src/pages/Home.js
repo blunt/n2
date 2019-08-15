@@ -18,7 +18,7 @@ const Home = (props) => {
 
 
     const getHomeContent = () => {
-        if (localStorage.getItem("newContent") === null) {
+        if (sessionStorage.getItem("newContent") === null) {
             getNew().then((content) => {
                 try {
                     setNewContent(content);
@@ -28,7 +28,7 @@ const Home = (props) => {
                 }
             });
         } else {
-            setNewContent(JSON.parse(localStorage.getItem("newContent") || "[]"));
+            setNewContent(JSON.parse(sessionStorage.getItem("newContent") || "[]"));
             setLoading(false);
         }
     }

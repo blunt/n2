@@ -21,7 +21,7 @@ const apiConfig = {
 
 const getNew = async () => {
         const allContent = await axios.get(apiUrl, apiConfig);
-        localStorage.setItem("newContent", JSON.stringify(allContent.data.ITEMS));
+        sessionStorage.setItem("newContent", JSON.stringify(allContent.data.ITEMS));
         const content = allContent.data.ITEMS;
         return content;
 }
@@ -68,7 +68,7 @@ const getGenre = async (genreIds) => {
 
 const getGenres = async () => {
     const allContent = await axios.get(genresEndpoint, apiConfig);
-    localStorage.setItem("genres", JSON.stringify(allContent.data.ITEMS));
+    sessionStorage.setItem("genres", JSON.stringify(allContent.data.ITEMS));
     const content = allContent.data.ITEMS;
     return content;
 
