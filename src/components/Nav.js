@@ -5,6 +5,7 @@ import {getGenres} from "../services/ApiData";
 const Nav = (props) => {
 
     const [genres, setGenres] = useState([]);
+    const [keyword, setKeyword] = useState("");
 
     useEffect(() => {
         if (localStorage.getItem("genres") === null) {
@@ -20,6 +21,17 @@ const Nav = (props) => {
         }
     }, []);
 
+    useEffect( () => {
+        if (keyword !== "") {
+            const filteredGenres = genres.filter(genre =>
+                JSON.stringify(Object.keys(genre)).toLowerCase().includes(keyword)
+            );
+            setGenres(filteredGenres);
+        } else {
+            setGenres(JSON.parse(localStorage.getItem("genres") || "[]"))
+        }
+    }, [keyword])
+
     return (
         <header className={"flex flex-col p-6 md:sticky top-0 h-screen md:w-1/3 w-full"}>
             <div>
@@ -33,13 +45,20 @@ const Nav = (props) => {
                 </h1>
                 <h2 className={"text-2xl leading-tight max-w-xs my-8"}>The fastest way to find something to watch on Netflix.</h2>
             </div>
+            <input
+                className={"w-full bg-black focus:outline-none text-sm py-4"}
+                type={"text"}
+                value={keyword}
+                placeholder={"Search genres"}
+                onChange={e => setKeyword(e.target.value)}
+            />
             <nav
                 id={"genres"}
-                className={"relative flex-grow overflow-hidden"}
+                className={"relative flex-grow overflow-hidden border-b border-t border-gray-800"}
             >
-                <div className={"absolute top-0 bottom-0 overflow-y-scroll hide-scrollbar"}>
+                <div className={"absolute py-4 top-0 bottom-0 overflow-y-scroll hide-scrollbar"}>
                     {genres.map((item) => {
-                            const genreTitle = Object.keys(item)[0].replace('All ','');
+                            const genreTitle = Object.keys(item)[0];
                             const genreIds = Object.values(item)[0].join();
                             return (
                                 <label

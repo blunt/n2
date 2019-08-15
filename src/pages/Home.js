@@ -108,38 +108,35 @@ const Home = (props) => {
                 handleInputChange={handleInputChange}
             />
             <div className={"container"}>
-                <div>
+                <div className={"pt-16"}>
+                    <PageHeader
+                        home={true}
+                        keyword={keyword}
+                        handleKeyDown={handleKeyDown}
+                        setKeyword={setKeyword}
+                    />
                     {props.location.pathname.includes('title') && title ? (
                         props.children
                     ) : (
-                        <div className={"pt-6"}>
-                            <PageHeader
-                                home={true}
-                                keyword={keyword}
-                                handleKeyDown={handleKeyDown}
-                                setKeyword={setKeyword}
-                            />
-                            {loading ? (
-                                <div>
-                                    <Loading/>
-                                </div>
+                        loading ? (
+                            <div>
+                                <Loading/>
+                            </div>
+                        ) : (
+                            searching ? (
+                                <List
+                                    title={newContent.length + ' results'}
+                                    content={newContent}
+                                    onTitlePage={handleTitlePage}
+                                />
                             ) : (
-                                searching ? (
-                                    <List
-                                        title={newContent.length + ' results'}
-                                        content={newContent}
-                                        onTitlePage={handleTitlePage}
-                                    />
-                                ) : (
-                                    <List
-                                        title={newContent.length + " new titles"}
-                                        content={newContent}
-                                        onTitlePage={handleTitlePage}
-                                    />
-                                )
+                                <List
+                                    title={newContent.length + " new titles"}
+                                    content={newContent}
+                                    onTitlePage={handleTitlePage}
+                                />
                             )
-                            }
-                        </div>
+                        )
                         )
                     }
                 </div>
