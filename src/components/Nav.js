@@ -11,7 +11,7 @@ const Nav = (props) => {
     const [keyword, setKeyword] = useState("");
 
     useEffect(() => {
-        if (sessionStorage.getItem("genres") === null) {
+        if (localStorage.getItem("genres") === null) {
             getGenres().then((content) => {
                 try {
                     setGenres(content);
@@ -21,7 +21,7 @@ const Nav = (props) => {
                 }
             })
         } else {
-            setGenres(JSON.parse(sessionStorage.getItem("genres") || "[]"))
+            setGenres(JSON.parse(localStorage.getItem("genres") || "[]"))
             setLoading(false);
         }
     }, []);

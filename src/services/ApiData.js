@@ -68,7 +68,7 @@ const getGenre = async (genreIds) => {
 
 const getGenres = async () => {
     const allContent = await axios.get(genresEndpoint, apiConfig);
-    sessionStorage.setItem("genres", JSON.stringify(allContent.data.ITEMS));
+    localStorage.setItem("genres", JSON.stringify(allContent.data.ITEMS));
     const content = allContent.data.ITEMS;
     return content;
 
