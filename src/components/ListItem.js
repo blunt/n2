@@ -23,6 +23,7 @@ const ListItem = (props) => {
             <figure className={"w-1/5"}>
                 <div onClick={props.handleTitle}>
                     <img
+                        loading={"lazy"}
                         data-id={props.item.netflixid}
                         className={"w-full h-auto rounded cursor-pointer"}
                         src={props.item.image} alt={props.item.title}

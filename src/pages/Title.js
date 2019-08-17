@@ -30,6 +30,7 @@ const Title = (props) => {
                 <div className={"border-b border-gray-800 py-6 flex"}>
                     <figure className={"w-2/6"}>
                         <img
+                            loading={"lazy"}
                             className={"rounded w-full h-auto"}
                             src={content.nfinfo.image1}
                             alt={content.nfinfo.title}
