@@ -69,7 +69,7 @@ const Home = (props) => {
         const titleId = event.target.getAttribute('data-id')
         setIsTitle(true);
         setTitle(titleId);
-        history.push('/titles/' + titleId, { id: titleId });
+        history.push('/n2/titles/' + titleId, { id: titleId });
     }
 
     window.onpopstate = function () {
@@ -94,7 +94,7 @@ const Home = (props) => {
 
     const handleHome = (event) => {
         setIsTitle(false);
-        history.push('/');
+        history.push('/n2');
     }
 
     const handleInputChange = (event) => {
