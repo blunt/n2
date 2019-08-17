@@ -68,12 +68,28 @@ const Home = (props) => {
         const titleId = event.target.getAttribute('data-id')
         setIsTitle(true);
         setTitle(titleId);
-        history.push('/titles/' + titleId);
+        history.push('/titles/' + titleId, { id: titleId });
     }
 
     window.onpopstate = function () {
-        setIsTitle(false);
+        const path = history.location.pathname;
+        if (path.includes('titles')) {
+            const newTitle = path.replace('/titles/', '');
+            setIsTitle(true);
+            setTitle(Number(newTitle));
+        } else {
+            setIsTitle(false);
+        }
     };
+
+    useEffect(() => {
+        const path = history.location.pathname;
+        if (path.includes('titles')) {
+            const newTitle = path.replace('/titles/', '');
+            setIsTitle(true);
+            setTitle(Number(newTitle));
+        }
+    }, []);
 
     const handleHome = (event) => {
         setIsTitle(false);
@@ -117,7 +133,6 @@ const Home = (props) => {
     }
 
     useEffect(() => {
-        setTitle(false);
         if (genres.length > 0 || keyword !== "") {
             getSearchResults(keyword, genres, activeCountryNumber);
         } else {
