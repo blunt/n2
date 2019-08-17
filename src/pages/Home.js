@@ -69,7 +69,7 @@ const Home = (props) => {
         const titleId = event.target.getAttribute('data-id')
         setIsTitle(true);
         setTitle(titleId);
-        history.push('/n2/titles/' + titleId, { id: titleId });
+        history.push('/n2/#/titles/' + titleId, { id: titleId });
     }
 
     window.onpopstate = function () {
@@ -84,9 +84,9 @@ const Home = (props) => {
     };
 
     useEffect(() => {
-        const path = history.location.pathname;
+        const path = window.location.hash;
         if (path.includes('titles')) {
-            const newTitle = path.replace('/n2/titles/', '');
+            const newTitle = path.replace('#/titles/', '');
             setIsTitle(true);
             setTitle(Number(newTitle));
         }
