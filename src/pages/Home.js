@@ -17,6 +17,7 @@ const Home = (props) => {
     const [loading, setLoading] = useState(true);
     const [searching, setSearching] = useState(false);
     const [genres, setGenres] = useState([]);
+    const [activeGenres, setActiveGenres] = useState([]);
     const [keyword, setKeyword] = useState("");
     const [isTitle, setIsTitle] = useState(false);
     const [title, setTitle] = useState(0);
@@ -105,11 +106,9 @@ const Home = (props) => {
 
         if (status === true) {
             setGenres([...genres, value])
+            setActiveGenres([...activeGenres, [target.name, target.value]]);
         } else {
-            const newGenres = genres.filter(genre =>
-                genre !== value
-            );
-            setGenres(newGenres);
+            removeGenre(event);
         }
 
         if (count > 0) {
@@ -123,7 +122,33 @@ const Home = (props) => {
 
     }
 
+    const removeGenre = (event) => {
+        const target = event.target;
+        const value = target.getAttribute("data-id");
+        const otherValue = target.value;
+        const newGenres = genres.filter(genre =>
+            genre !== value
+        );
+        const newActiveGenres = activeGenres.filter(genre =>
+            otherValue ? (
+                genre[1] !== otherValue
+            ) : (
+                genre[1] !== value
+            )
+        );
+
+        const checkbox = document.querySelectorAll(".genre-checkbox[value=" + JSON.stringify(value) + "]")[0];
+
+        if (checkbox) {
+            checkbox.checked = false;
+        }
+
+        setGenres(newGenres);
+        setActiveGenres(newActiveGenres);
+    }
+
     const handleCountryChange = (event) => {
+        setIsTitle(false);
         const value = event.target.value;
         const obj = event.target;
         const number_id = obj.options[obj.selectedIndex].getAttribute('data-id');
@@ -169,7 +194,18 @@ const Home = (props) => {
                                     title={newContent.length + ' results'}
                                     content={newContent}
                                     handleTitle={handleTitle}
-                                />
+                                >
+                                    { activeGenres.map((activeGenre, i) => (
+                                        <button
+                                            key={activeGenre[1]}
+                                            data-id={activeGenre[1]}
+                                            className={"ml-2 px-1 text-xs rounded inline-block text-center border cursor-pointer border-gray-900 hover:border-gray-600 focus:outline-none"}
+                                            onClick={removeGenre}
+                                        >
+                                            {activeGenre[0]} x
+                                        </button>
+                                    ))}
+                                </List>
                             ) : (
                                 <List
                                     title={newContent.length + " new titles"}

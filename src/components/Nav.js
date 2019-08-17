@@ -121,6 +121,7 @@ const Nav = (props) => {
                                     className={"block text-sm text-gray-500 hover:text-white"}
                                 >
                                     <input
+                                        className={"genre-checkbox"}
                                         name={genreTitle}
                                         type={"checkbox"}
                                         checked={props.isActive}
