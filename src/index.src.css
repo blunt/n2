@@ -67,6 +67,7 @@ header.sticky {
 }
 
 input::placeholder {
+    transition: all .1s ease-in;
     @apply text-gray-500;
     opacity: 1; /* Firefox */
 }
@@ -77,6 +78,7 @@ input:hover::placeholder {
 }
 
 select {
+    transition: all .1s ease-in;
     min-width: 150px;
     padding-right: 24px;
     background: url('./assets/images/chevrondown.svg') no-repeat center right;

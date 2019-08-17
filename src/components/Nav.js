@@ -76,7 +76,7 @@ const Nav = (props) => {
             <div className={"mb-4"}>
                 {!loading &&
                     <select
-                        className={"bg-gray-900 py-1 px-2 appearance-none focus:outline-none text-sm text-gray-500 hover:text-white"}
+                        className={"cursor-pointer border border-gray-900 hover:border-gray-600 py-1 px-2 appearance-none focus:outline-none text-sm text-gray-500 hover:text-white"}
                         onChange={props.handleCountryChange}
                         defaultValue={"ca"}
                         id={"select_id"}

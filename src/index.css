@@ -7668,26 +7668,36 @@ header.sticky {
 }
 
 input::-webkit-input-placeholder {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
   color: #a0aec0;
   opacity: 1; /* Firefox */
 }
 
 input::-moz-placeholder {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
   color: #a0aec0;
   opacity: 1; /* Firefox */
 }
 
 input:-ms-input-placeholder {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
   color: #a0aec0;
   opacity: 1; /* Firefox */
 }
 
 input::-ms-input-placeholder {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
   color: #a0aec0;
   opacity: 1; /* Firefox */
 }
 
 input::placeholder {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
   color: #a0aec0;
   opacity: 1; /* Firefox */
 }
@@ -7718,6 +7728,8 @@ input:hover::placeholder {
 }
 
 select {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
   min-width: 150px;
   padding-right: 24px;
   background: url('./assets/images/chevrondown.svg') no-repeat center right;
