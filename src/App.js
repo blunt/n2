@@ -15,6 +15,11 @@ const App = () => {
                     path={'/'}
                     component={Home}
                 />
+                <Route
+                    exact
+                    path={'/titles/:id'}
+                    component={Home}
+                />
             </Router>
         </div>
     );
