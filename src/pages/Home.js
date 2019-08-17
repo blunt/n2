@@ -75,7 +75,7 @@ const Home = (props) => {
     window.onpopstate = function () {
         const path = history.location.pathname;
         if (path.includes('titles')) {
-            const newTitle = path.replace('/titles/', '');
+            const newTitle = path.replace('/n2/titles/', '');
             setIsTitle(true);
             setTitle(Number(newTitle));
         } else {
@@ -86,7 +86,7 @@ const Home = (props) => {
     useEffect(() => {
         const path = history.location.pathname;
         if (path.includes('titles')) {
-            const newTitle = path.replace('/titles/', '');
+            const newTitle = path.replace('/n2/titles/', '');
             setIsTitle(true);
             setTitle(Number(newTitle));
         }
