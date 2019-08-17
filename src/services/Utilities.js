@@ -14,11 +14,19 @@ const slugify = (string) => {
 }
 
 const netflixUrl = (id) => {
-    return "https://www.netflix.com/watch/" + id
+    return "https://www.netflix.com/watch/" + id;
 }
 
 const trailerUrl = (title) => {
-    return "https://www.youtube.com/results?search_query=" + title + " official trailer"
+    return "https://www.youtube.com/results?search_query=" + title + " official trailer";
+}
+
+const imdbUrl = (id) => {
+    return "https://imdb.com/title/" + id;
+}
+
+const rottenUrl = (title, year) => {
+    return "https://www.rottentomatoes.com/search/?search=" + title
 }
 
 const trim = (s) => {
@@ -27,4 +35,4 @@ const trim = (s) => {
     return s
 }
 
-export {slugify, netflixUrl, trailerUrl, trim};
+export {slugify, netflixUrl, trailerUrl, rottenUrl, imdbUrl, trim};

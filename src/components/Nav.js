@@ -76,7 +76,7 @@ const Nav = (props) => {
             <div className={"mb-4"}>
                 {!loading &&
                     <select
-                        className={"bg-transparent w-full p-0 appearance-none focus:outline-none text-sm text-gray-500 hover:text-white"}
+                        className={"bg-gray-900 py-1 px-2 appearance-none focus:outline-none text-sm text-gray-500 hover:text-white"}
                         onChange={props.handleCountryChange}
                         defaultValue={"ca"}
                         id={"select_id"}
@@ -99,13 +99,15 @@ const Nav = (props) => {
                     </select>
                 }
             </div>
-            <input
-                className={"w-full bg-black focus:outline-none text-sm py-4"}
-                type={"text"}
-                value={keyword}
-                placeholder={"Search genres"}
-                onChange={e => setKeyword(e.target.value)}
-            />
+            <div className={"relative search-field flex items-center"}>
+                <input
+                    className={"w-full bg-black focus:outline-none text-sm py-4"}
+                    type={"text"}
+                    value={keyword}
+                    placeholder={"Search genres"}
+                    onChange={e => setKeyword(e.target.value)}
+                />
+            </div>
             <nav
                 id={"genres"}
                 className={"relative flex-grow overflow-hidden border-b border-t border-gray-800"}

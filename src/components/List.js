@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const List = (props) => {
     return (
-        <section className={"mb-12"}>
+        <section className={"mb-6"}>
             <header className={"sticky top-0 mb-4 border-b border-gray-800 bg-black z-10 text-xs py-4 flex"}>
                 <div className={"flex items-center"}>
                     <h2>{props.title}</h2>

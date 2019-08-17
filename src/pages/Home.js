@@ -51,7 +51,11 @@ const Home = (props) => {
         });
     }
 
-    const handleKeyDown = (event) => {
+
+    /*
+        On enter, if keyword isn't empty, search content.
+    */
+    const handleSearch = (event) => {
         if (event.key === 'Enter') {
             setIsTitle(false);
             setLoading(true);
@@ -65,6 +69,10 @@ const Home = (props) => {
         }
     }
 
+
+    /*
+        Navigate user to title page
+    */
     const handleTitle = (event) => {
         const titleId = event.target.getAttribute('data-id')
         setIsTitle(true);
@@ -72,6 +80,10 @@ const Home = (props) => {
         history.push('/n2/#/titles/' + titleId, { id: titleId });
     }
 
+
+    /*
+        On browser back, check if path is title or home page.
+    */
     window.onpopstate = function () {
         const path = history.location.pathname;
         if (path.includes('titles')) {
@@ -83,23 +95,20 @@ const Home = (props) => {
         }
     };
 
-    useEffect(() => {
-        const path = window.location.hash;
-        if (path.includes('titles')) {
-            const newTitle = path.replace('#/titles/', '');
-            setIsTitle(true);
-            setTitle(Number(newTitle));
-        }
-    }, []);
 
+    /*
+        Return user to homepage.
+    */
     const handleHome = (event) => {
         setIsTitle(false);
         history.push('/n2');
     }
 
-    const handleInputChange = (event) => {
+    /*
+        If genre is selected, add genre tag, check checkbox, and set active genres.
+    */
+    const handleSelectGenre = (event) => {
         setIsTitle(false);
-        let count = document.querySelectorAll("#genres :checked").length;
         const target = event.target;
         const value = target.value;
         const status = target.checked;
@@ -110,6 +119,9 @@ const Home = (props) => {
         } else {
             removeGenre(event);
         }
+
+        let count = document.querySelectorAll("#genres :checked").length;
+
 
         if (count > 0) {
             setSearching(true);
@@ -122,6 +134,10 @@ const Home = (props) => {
 
     }
 
+
+    /*
+        If genre is unselected, remove genre tag, uncheck checkbox, and reset active genres.
+    */
     const removeGenre = (event) => {
         const target = event.target;
         const value = target.getAttribute("data-id");
@@ -147,6 +163,10 @@ const Home = (props) => {
         setActiveGenres(newActiveGenres);
     }
 
+
+    /*
+        If country changes, set title to false and set active country.
+    */
     const handleCountryChange = (event) => {
         setIsTitle(false);
         const value = event.target.value;
@@ -157,6 +177,21 @@ const Home = (props) => {
         setActiveCountryNumber(number_id)
     }
 
+    /*
+        Check window hash and redirect to title page if it contains 'titles'.
+    */
+    useEffect(() => {
+        const path = window.location.hash;
+        if (path.includes('titles')) {
+            const newTitle = path.replace('#/titles/', '');
+            setIsTitle(true);
+            setTitle(Number(newTitle));
+        }
+    }, []);
+
+    /*
+        If selected genres or search keyword active, show results, else show new content.
+    */
     useEffect(() => {
         if (genres.length > 0 || keyword !== "") {
             getSearchResults(keyword, genres, activeCountryNumber);
@@ -168,7 +203,7 @@ const Home = (props) => {
     return (
         <div className={"page-container"}>
             <Nav
-                handleInputChange={handleInputChange}
+                handleInputChange={handleSelectGenre}
                 handleCountryChange={handleCountryChange}
                 handleHome={handleHome}
                 defaultCountry={"33"}
@@ -178,7 +213,7 @@ const Home = (props) => {
                     <PageHeader
                         home={true}
                         keyword={keyword}
-                        handleKeyDown={handleKeyDown}
+                        handleKeyDown={handleSearch}
                         setKeyword={setKeyword}
                     />
                     {isTitle ? (

@@ -32,9 +32,10 @@ const Button = (props) => {
                     className={classes}
                     style={buttonStyle}
                     target={"_blank"}
-                    rel={"norefferer"}
+                    rel={"noopener noreferrer"}
                 >
                     {props.label}
+                    {props.children}
                 </a>
             )
 

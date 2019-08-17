@@ -1,5 +1,5 @@
 import React from 'react';
-import {netflixUrl, trim} from "../services/Utilities"
+import {netflixUrl, trailerUrl, trim} from "../services/Utilities"
 import Button from "./Button";
 
 
@@ -21,20 +21,26 @@ const ListItem = (props) => {
             className={listClasses}
         >
             <figure className={"w-1/5"}>
-                <div onClick={props.handleTitle}>
+                <a
+                    className={"block img-wrapper rounded overflow-hidden"}
+                    href={netflixUrl(props.item.netflixid)}
+                    target={"_blank"}
+                    rel={"noopener noreferrer"}
+                >
                     <img
-                        loading={"lazy"}
                         data-id={props.item.netflixid}
-                        className={"w-full h-auto rounded cursor-pointer"}
-                        src={props.item.image} alt={props.item.title}
+                        className={"w-full h-auto cursor-pointer"}
+                        src={props.item.image}
+                        alt={props.item.title}
                     />
-                </div>
+                </a>
+
             </figure>
             <figcaption className={"w-4/5 ml-4 flex flex-col"}>
                 <div onClick={props.handleTitle}>
                     <h3
                         data-id={props.item.netflixid}
-                        className={"text-xl font-semibold mb-2 border-b border-transparent inline-block hover:border-white cursor-pointer"}
+                        className={"text-xl font-semibold mb-2 border-b border-transparent hover:border-white inline-block cursor-pointer"}
                         dangerouslySetInnerHTML={{__html: props.item.title}}
                     />
                 </div>
@@ -46,8 +52,8 @@ const ListItem = (props) => {
                         />
                         <div className={"mt-auto"}>
                             <Button
-                                link={netflixUrl(props.item.netflixid)}
-                                label={"Watch " + props.item.type}
+                                link={trailerUrl(props.item.title)}
+                                label={"Watch trailer"}
                             />
                             <Button
                                 type={"secondary"}
