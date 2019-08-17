@@ -7582,6 +7582,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.transition {
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
 .page-container {
   position: relative;
 }
@@ -7607,7 +7612,7 @@ body {
 
 @media (min-width: 1024px) {
   .container {
-    width: 66.666667%;
+    width: 75%;
     margin-left: auto;
   }
 }
@@ -7750,7 +7755,7 @@ select {
   position: relative;
   height: 0;
   /* Formula is: (height / width * 100%) */
-  padding-top: 140.36%;
+  padding-top: 140.15%;
   background-color: #1a202c;
 }
 
@@ -7853,12 +7858,12 @@ label:hover input {
   background-color: #2d3748;
 }
 
-label .label {
+label {
   border-bottom-width: 1px;
   border-color: transparent;
 }
 
-label:hover .label {
+label:hover {
   border-color: #fff;
 }
 

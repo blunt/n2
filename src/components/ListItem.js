@@ -47,7 +47,7 @@ const ListItem = (props) => {
                 <div className={"flex flex-grow"}>
                     <div className={"flex flex-col pr-8"}>
                         <p
-                            className={"mb-4 text-gray-500 leading-tight text-sm"}
+                            className={"mb-4 text-gray-500"}
                             dangerouslySetInnerHTML={{__html: trim(props.item.synopsis)}}
                         />
                         <div className={"mt-auto"}>

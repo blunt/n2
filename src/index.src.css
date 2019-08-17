@@ -9,6 +9,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.transition {
+    transition: all .1s ease-in;
+}
+
 .page-container {
     @apply relative;
 }
@@ -26,7 +30,7 @@ body {
 
 @screen lg {
     .container {
-        @apply w-2/3 ml-auto;
+        @apply w-3/4 ml-auto;
     }
 }
 
@@ -99,7 +103,7 @@ select {
     position: relative;
     height: 0;
     /* Formula is: (height / width * 100%) */
-    padding-top: 140.36%;
+    padding-top: 140.15%;
     @apply bg-gray-900;
 }
 
@@ -181,11 +185,11 @@ label:hover input {
     @apply bg-gray-800;
 }
 
-label .label {
+label {
     @apply border-b border-transparent;
 }
 
-label:hover .label {
+label:hover {
     @apply border-white;
 }
 

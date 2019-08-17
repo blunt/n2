@@ -8,6 +8,7 @@ import List from "../components/List";
 import PageHeader from "../components/PageHeader";
 import Nav from "../components/Nav";
 import Title from "./Title";
+import RemoveIcon from '../assets/images/remove.svg';
 
 const Home = (props) => {
 
@@ -234,10 +235,13 @@ const Home = (props) => {
                                         <button
                                             key={activeGenre[1]}
                                             data-id={activeGenre[1]}
-                                            className={"ml-2 px-1 text-xs rounded inline-block text-center border cursor-pointer border-gray-900 hover:border-gray-600 focus:outline-none"}
+                                            className={"transition flex items-center ml-2 px-1 text-xs rounded inline-block text-center border cursor-pointer border-gray-900 hover:border-gray-600 focus:outline-none text-gray-500 hover:text-white"}
                                             onClick={removeGenre}
                                         >
-                                            {activeGenre[0]} x
+                                            <span>{activeGenre[0]}</span>
+                                            <svg className={"w-3 h-auto ml-1"} width="64" height="64" viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M32 56C27.2533 56 22.6131 54.5924 18.6663 51.9553C14.7195 49.3181 11.6434 45.5698 9.8269 41.1844C8.0104 36.799 7.53512 31.9734 8.46116 27.3178C9.38721 22.6623 11.673 18.3859 15.0294 15.0294C18.3859 11.673 22.6623 9.38721 27.3178 8.46116C31.9734 7.53512 36.799 8.0104 41.1844 9.8269C45.5698 11.6434 49.3181 14.7195 51.9553 18.6663C54.5924 22.6131 56 27.2533 56 32C56 38.3652 53.4714 44.4697 48.9706 48.9706C44.4697 53.4714 38.3652 56 32 56ZM17 32C17 31.4696 17.2107 30.9609 17.5858 30.5858C17.9609 30.2107 18.4696 30 19 30H45C45.5304 30 46.0392 30.2107 46.4142 30.5858C46.7893 30.9609 47 31.4696 47 32C47 32.5304 46.7893 33.0392 46.4142 33.4142C46.0392 33.7893 45.5304 34 45 34H19C18.4696 34 17.9609 33.7893 17.5858 33.4142C17.2107 33.0392 17 32.5304 17 32Z" fill="currentColor"/>
+                                            </svg>
                                         </button>
                                     ))}
                                 </List>

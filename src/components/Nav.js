@@ -61,7 +61,7 @@ const Nav = (props) => {
     }, [filteredGenres, genres]);
 
     return (
-        <header className={"flex flex-col p-6 md:sticky top-0 h-screen md:w-1/3 w-full"}>
+        <header className={"flex flex-col p-6 md:sticky top-0 h-screen md:w-1/4 w-full"}>
             <div>
                 <h1 className={"text-sm"}>
                     <div
@@ -76,7 +76,7 @@ const Nav = (props) => {
             <div className={"mb-4"}>
                 {!loading &&
                     <select
-                        className={"cursor-pointer border border-gray-900 hover:border-gray-600 py-1 px-2 appearance-none focus:outline-none text-sm text-gray-500 hover:text-white"}
+                        className={"w-full cursor-pointer border border-gray-900 hover:border-gray-600 py-1 px-2 appearance-none focus:outline-none text-sm text-gray-500 hover:text-white"}
                         onChange={props.handleCountryChange}
                         defaultValue={"ca"}
                         id={"select_id"}
@@ -118,20 +118,22 @@ const Nav = (props) => {
                             const genreTitle = Object.keys(item)[0];
                             const genreIds = Object.values(item)[0].join();
                             return (
-                                <label
-                                    key={genreTitle}
-                                    className={"block text-sm text-gray-500 hover:text-white"}
-                                >
-                                    <input
-                                        className={"genre-checkbox"}
-                                        name={genreTitle}
-                                        type={"checkbox"}
-                                        checked={props.isActive}
-                                        onChange={props.handleInputChange}
-                                        value={genreIds}
-                                    />
-                                    <span className={"label"}>{genreTitle}</span>
-                                </label>
+                                <div>
+                                    <label
+                                        key={genreTitle}
+                                        className={"inline-block text-sm transition text-gray-500 hover:text-white"}
+                                    >
+                                        <input
+                                            className={"genre-checkbox"}
+                                            name={genreTitle}
+                                            type={"checkbox"}
+                                            checked={props.isActive}
+                                            onChange={props.handleInputChange}
+                                            value={genreIds}
+                                        />
+                                        <span className={"label"}>{genreTitle}</span>
+                                    </label>
+                                </div>
                             )
                         }
                     )}
