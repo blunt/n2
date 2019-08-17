@@ -24,7 +24,7 @@ const List = (props) => {
                             index={index + 1}
                             key={item.netflixid}
                             item={item}
-                            onTitlePage={props.onTitlePage}
+                            handleTitle={props.handleTitle}
                         />
                     )
                 )}

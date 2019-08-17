@@ -66,15 +66,24 @@ header.sticky {
     }
 }
 
+input::placeholder {
+    @apply text-gray-500;
+    opacity: 1; /* Firefox */
+}
+
+input:hover::placeholder {
+    @apply text-white;
+    opacity: 1; /* Firefox */
+}
 
 /* Checkboxes */
 
-.checkbox-container {
-    @apply block relative pl-5 cursor-pointer;
+label {
+    @apply block relative cursor-pointer;
 }
 
 /* Hide the browser's default checkbox */
-.checkbox-container input {
+label input {
     @apply absolute opacity-0 cursor-pointer h-0 w-0;
 }
 
@@ -84,19 +93,18 @@ header.sticky {
 }
 
 /* On mouse-over, add a grey background color */
-.checkbox-container:hover input {
+label:hover input {
     @apply bg-gray-800;
 }
 
-.checkbox-container .label {
+label .label {
     @apply border-b border-transparent;
 }
 
-.checkbox-container:hover .label {
+label:hover .label {
     @apply border-white;
 }
 
-/* When the checkbox is checked, add a blue background */
-.checkbox-container input:checked ~ .checkmark {
-    @apply bg-white;
+label input:checked ~ .label {
+    @apply text-white;
 }

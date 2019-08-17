@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d7595b4-c28f-4a42-b6e8-812f94b0150d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/history.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.src.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.src.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Title.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ApiData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ApiData.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,7 +83,9 @@
       <workItem from="1565191549113" duration="29771000" />
       <workItem from="1565568142268" duration="15213000" />
       <workItem from="1565834437507" duration="578000" />
-      <workItem from="1565835817973" duration="5077000" />
+      <workItem from="1565835817973" duration="5112000" />
+      <workItem from="1565911421139" duration="10833000" />
+      <workItem from="1565932127113" duration="3560000" />
     </task>
     <servers />
   </component>
@@ -101,7 +114,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/services/ApiData.js</url>
-          <line>14</line>
+          <line>13</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

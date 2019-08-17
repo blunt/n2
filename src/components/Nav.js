@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router-dom";
-import {getGenres} from "../services/ApiData";
+import {getCountries, getGenres} from "../services/ApiData";
 
 const Nav = (props) => {
 
     const [genres, setGenres] = useState([]);
+    const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
     const [filteredGenres, setFilteredGenres] = useState([]);
     const [finalGenres, setFinalGenres] = useState([]);
@@ -22,6 +22,21 @@ const Nav = (props) => {
             })
         } else {
             setGenres(JSON.parse(localStorage.getItem("genres") || "[]"))
+            setLoading(false);
+        }
+
+        if (localStorage.getItem("countries") === null) {
+            getCountries().then((content) => {
+                try {
+                    setCountries(content);
+                    document.querySelector('#select_id [value="ca"]').selected = true;
+                    setLoading(false);
+                } catch {
+
+                }
+            })
+        } else {
+            setCountries(JSON.parse(localStorage.getItem("countries") || "[]"))
             setLoading(false);
         }
     }, []);
@@ -49,14 +64,40 @@ const Nav = (props) => {
         <header className={"flex flex-col p-6 md:sticky top-0 h-screen md:w-1/3 w-full"}>
             <div>
                 <h1 className={"text-sm"}>
-                    <Link
-                        to={"/"}
-                        className={"border-b border-transparent hover:border-white"}
+                    <div
+                        onClick={props.handleHome}
+                        className={"inline-block border-b border-transparent hover:border-white cursor-pointer"}
                     >
                         N²
-                    </Link>
+                    </div>
                 </h1>
                 <h2 className={"text-2xl leading-tight max-w-xs my-8"}>The fastest way to find something to watch on Netflix.</h2>
+            </div>
+            <div className={"mb-4"}>
+                {!loading &&
+                    <select
+                        className={"bg-transparent w-full p-0 appearance-none focus:outline-none text-sm text-gray-500 hover:text-white"}
+                        onChange={props.handleCountryChange}
+                        defaultValue={"ca"}
+                        id={"select_id"}
+                    >
+                        {countries.map((item) => {
+                            const number_id = Object.values(item)[0];
+                            const id = Object.values(item)[1];
+                            const name = Object.values(item)[2];
+                            return (
+                                <option
+                                    value={id}
+                                    key={number_id}
+                                    data-id={number_id}
+                                >
+                                    {name}
+                                </option>
+                            )
+                        })
+                        }
+                    </select>
+                }
             </div>
             <input
                 className={"w-full bg-black focus:outline-none text-sm py-4"}
@@ -77,17 +118,15 @@ const Nav = (props) => {
                             return (
                                 <label
                                     key={genreTitle}
-                                    className={"block text-sm checkbox-container"}
+                                    className={"block text-sm text-gray-500 hover:text-white"}
                                 >
                                     <input
                                         name={genreTitle}
                                         type={"checkbox"}
-                                        className={"border-b border-transparent hover:border-white mr-2"}
                                         checked={props.isActive}
                                         onChange={props.handleInputChange}
                                         value={genreIds}
                                     />
-                                    <span className={"checkmark"}></span>
                                     <span className={"label"}>{genreTitle}</span>
                                 </label>
                             )

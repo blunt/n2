@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const proxyUrl = '',
-    apiUrl = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get:new7:CA&p=1&t=ns&st=adv',
     genresEndpoint = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/api.cgi?t=genres',
     searchEndpoint = proxyUrl + 'https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi',
     apiKey = '3adfd0f105mshd37f672cb2a6ef6p1cc404jsn3c93ad7906e0',
@@ -19,14 +18,41 @@ const apiConfig = {
     }
 }
 
-const getNew = async () => {
-        const allContent = await axios.get(apiUrl, apiConfig);
-        sessionStorage.setItem("newContent", JSON.stringify(allContent.data.ITEMS));
-        const content = allContent.data.ITEMS;
-        return content;
+const getNew = async (activeCountry) => {
+    const allContent = await axios.get(searchEndpoint, {
+        headers: {
+            "X-RapidAPI-Host": apiHost,
+            "X-RapidAPI-Key": apiKey // Replace with valid key
+        },
+        params: {
+            "q": "get:new7:" + activeCountry,
+            "p": "1",
+            "t": "ns",
+            "st": "adv"
+        }
+    });
+    sessionStorage.setItem("newContent" + activeCountry, JSON.stringify(allContent.data.ITEMS));
+    const content = allContent.data.ITEMS;
+    return content;
 }
 
-const getResults = async (keyword, genres) => {
+const getCountries = async () => {
+    const allContent = await axios.get(searchEndpoint, {
+        headers: {
+            "X-RapidAPI-Host": apiHost,
+            "X-RapidAPI-Key": apiKey
+        },
+        params: {
+            "t": "lc",
+            "q": "available"
+        }
+    });
+    sessionStorage.setItem("countries", JSON.stringify(allContent.data.ITEMS));
+    const content = allContent.data.ITEMS;
+    return content;
+}
+
+const getResults = async (keyword, genres, activeCountry) => {
     const allContent = await axios.get(searchEndpoint, {
         headers: {
             "X-RapidAPI-Host": apiHost,
@@ -35,28 +61,7 @@ const getResults = async (keyword, genres) => {
         params: {
             "q": keyword + "-!1900,2018-!0,5-!0,10-!" + genres + "-!Any-!Any-!Any-!gt100-!{downloadable}",
             "t": "ns",
-            // "cl": "all",
-            "cl": "33", //Canadian ID
-            "st": "adv",
-            "ob": "Relevance",
-            "p": "1",
-            "sa": "and"
-        }
-    });
-    const content = allContent.data.ITEMS;
-    return content;
-}
-
-const getGenre = async (genreIds) => {
-    const allContent = await axios.get(searchEndpoint, {
-        headers: {
-            "X-RapidAPI-Host": apiHost,
-            "X-RapidAPI-Key": apiKey
-        },
-        params: {
-            "q": "-!1900,2018-!0,5-!0,10-!" + genreIds + "-!Any-!Any-!Any-!gt100-!{downloadable}",
-            "t": "ns",
-            "cl": "all",
+            "cl": activeCountry,
             "st": "adv",
             "ob": "Relevance",
             "p": "1",
@@ -90,4 +95,4 @@ const getTitle = async (id) => {
     return content;
 }
 
-export {getNew, getGenres, getTitle, getResults, getGenre}
+export {getNew, getCountries, getGenres, getTitle, getResults}

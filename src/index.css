@@ -7667,18 +7667,67 @@ header.sticky {
   }
 }
 
+input::-webkit-input-placeholder {
+  color: #a0aec0;
+  opacity: 1; /* Firefox */
+}
+
+input::-moz-placeholder {
+  color: #a0aec0;
+  opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder {
+  color: #a0aec0;
+  opacity: 1; /* Firefox */
+}
+
+input::-ms-input-placeholder {
+  color: #a0aec0;
+  opacity: 1; /* Firefox */
+}
+
+input::placeholder {
+  color: #a0aec0;
+  opacity: 1; /* Firefox */
+}
+
+input:hover::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+input:hover::-moz-placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+input:hover:-ms-input-placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+input:hover::-ms-input-placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+input:hover::placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
 /* Checkboxes */
 
-.checkbox-container {
+label {
   display: block;
   position: relative;
-  padding-left: 1.25rem;
   cursor: pointer;
 }
 
 /* Hide the browser's default checkbox */
 
-.checkbox-container input {
+label input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -7702,23 +7751,21 @@ header.sticky {
 
 /* On mouse-over, add a grey background color */
 
-.checkbox-container:hover input {
+label:hover input {
   background-color: #2d3748;
 }
 
-.checkbox-container .label {
+label .label {
   border-bottom-width: 1px;
   border-color: transparent;
 }
 
-.checkbox-container:hover .label {
+label:hover .label {
   border-color: #fff;
 }
 
-/* When the checkbox is checked, add a blue background */
-
-.checkbox-container input:checked ~ .checkmark {
-  background-color: #fff;
+label input:checked ~ .label {
+  color: #fff;
 }
 
 @media (min-width: 640px) {

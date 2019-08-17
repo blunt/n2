@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {netflixUrl, trim} from "../services/Utilities"
 import Button from "./Button";
 
@@ -20,23 +19,24 @@ const ListItem = (props) => {
         <article
             key={props.item.netflixid}
             className={listClasses}
-            onClick={props.onTitlePage}
         >
             <figure className={"w-1/5"}>
-                <Link to={item_url}>
+                <div onClick={props.handleTitle}>
                     <img
-                        className={"w-full h-auto rounded"}
+                        data-id={props.item.netflixid}
+                        className={"w-full h-auto rounded cursor-pointer"}
                         src={props.item.image} alt={props.item.title}
                     />
-                </Link>
+                </div>
             </figure>
             <figcaption className={"w-4/5 ml-4 flex flex-col"}>
-                <Link to={item_url}>
+                <div onClick={props.handleTitle}>
                     <h3
-                        className={"text-xl font-semibold mb-2 border-b border-transparent inline-block hover:border-white"}
+                        data-id={props.item.netflixid}
+                        className={"text-xl font-semibold mb-2 border-b border-transparent inline-block hover:border-white cursor-pointer"}
                         dangerouslySetInnerHTML={{__html: props.item.title}}
                     />
-                </Link>
+                </div>
                 <div className={"flex flex-grow"}>
                     <div className={"flex flex-col pr-8"}>
                         <p
@@ -53,6 +53,8 @@ const ListItem = (props) => {
                                 linkType={"link"}
                                 link={item_url}
                                 label={"Learn more"}
+                                handleTitle={props.handleTitle}
+                                dataId={props.item.netflixid}
                             />
                         </div>
                     </div>
