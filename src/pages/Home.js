@@ -105,6 +105,10 @@ const Home = (props) => {
         history.push('/n2');
     }
 
+    const handleCloseTitle = () => {
+        history.go(-1);
+    }
+
     /*
         If genre is selected, add genre tag, check checkbox, and set active genres.
     */
@@ -218,7 +222,10 @@ const Home = (props) => {
                         setKeyword={setKeyword}
                     />
                     {isTitle ? (
-                        <Title id={title}/>
+                        <Title
+                            id={title}
+                            handleCloseTitle={handleCloseTitle}
+                        />
                     ) : (
                         loading ? (
                             <div>

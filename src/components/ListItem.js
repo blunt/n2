@@ -40,7 +40,7 @@ const ListItem = (props) => {
                 <div onClick={props.handleTitle}>
                     <h3
                         data-id={props.item.netflixid}
-                        className={"text-xl font-semibold mb-2 border-b border-transparent hover:border-white inline-block cursor-pointer"}
+                        className={"text-xl font-medium mb-2 border-b border-transparent hover:border-white inline-block cursor-pointer"}
                         dangerouslySetInnerHTML={{__html: props.item.title}}
                     />
                 </div>

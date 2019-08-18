@@ -101,7 +101,7 @@ const Nav = (props) => {
             </div>
             <div className={"relative search-field flex items-center"}>
                 <input
-                    className={"w-full bg-black focus:outline-none text-sm py-4"}
+                    className={"w-full bg-black focus:outline-none text-sm py-3"}
                     type={"text"}
                     value={keyword}
                     placeholder={"Search genres"}
@@ -112,7 +112,7 @@ const Nav = (props) => {
                 id={"genres"}
                 className={"relative flex-grow overflow-hidden border-b border-t border-gray-800"}
             >
-                <div className={"absolute py-4 top-0 bottom-0 overflow-y-scroll hide-scrollbar"}>
+                <div className={"absolute py-3 top-0 bottom-0 overflow-y-scroll hide-scrollbar"}>
                     {!loading &&
                         finalGenres.map((item) => {
                             const genreTitle = Object.keys(item)[0];
