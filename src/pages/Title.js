@@ -167,9 +167,7 @@ const Title = (props) => {
                 </section>
                 <section className={"py-6 border-b border-gray-800 mb-6"}>
                     {content.imdbinfo.plot &&
-                        <p
-                            dangerouslySetInnerHTML={{__html: content.imdbinfo.plot.replace('amp;','')}}
-                        />
+                        <p>{content.imdbinfo.plot.replace(/&amp;#39;/g,"'", "'")}</p>
                     }
                 </section>
             </article>
