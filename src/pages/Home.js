@@ -52,7 +52,6 @@ const Home = (props) => {
         });
     }
 
-
     /*
         On enter, if keyword isn't empty, search content.
     */
@@ -62,11 +61,23 @@ const Home = (props) => {
             setLoading(true);
             if (keyword === "") {
                 setSearching(false);
-                getHomeContent();
+                getHomeContent(activeCountry);
             } else {
                 setSearching(true);
                 getSearchResults(keyword, genres, activeCountryNumber);
             }
+        }
+    }
+
+    const handleClearSearch = () => {
+        const emptyKeyword = ""
+        setKeyword(emptyKeyword);
+        if (genres.length > 0) {
+            setSearching(true);
+            getSearchResults(emptyKeyword, genres, activeCountryNumber);
+        } else {
+            setSearching(false);
+            getHomeContent(activeCountry);
         }
     }
 
@@ -105,6 +116,9 @@ const Home = (props) => {
         history.push('/n2');
     }
 
+    /*
+        Return user to homepage when click close on title page.
+    */
     const handleCloseTitle = () => {
         history.go(-1);
     }
@@ -144,9 +158,10 @@ const Home = (props) => {
         If genre is unselected, remove genre tag, uncheck checkbox, and reset active genres.
     */
     const removeGenre = (event) => {
-        const target = event.target;
+        const target = event.currentTarget;
         const value = target.getAttribute("data-id");
         const otherValue = target.value;
+
         const newGenres = genres.filter(genre =>
             genre !== value
         );
@@ -220,6 +235,7 @@ const Home = (props) => {
                         keyword={keyword}
                         handleKeyDown={handleSearch}
                         setKeyword={setKeyword}
+                        handleClearSearch={handleClearSearch}
                     />
                     {isTitle ? (
                         <Title

@@ -71,7 +71,7 @@ const Nav = (props) => {
                         N²
                     </div>
                 </h1>
-                <h2 className={"text-xl leading-tight max-w-xs my-6 py-1"}>The fastest way to find something to watch on Netflix.</h2>
+                <h2 className={"text-xl leading-tight max-w-xs my-6 py-1"}>The fastest way to find something on Netflix.</h2>
             </div>
             <div className={"mb-4"}>
                 {!loading &&
@@ -118,9 +118,8 @@ const Nav = (props) => {
                             const genreTitle = Object.keys(item)[0];
                             const genreIds = Object.values(item)[0].join();
                             return (
-                                <div>
+                                <div key={genreTitle}>
                                     <label
-                                        key={genreTitle}
                                         className={"inline-block text-sm transition text-gray-500 hover:text-white"}
                                     >
                                         <input

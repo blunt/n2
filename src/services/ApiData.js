@@ -59,7 +59,7 @@ const getResults = async (keyword, genres, activeCountry) => {
             "X-RapidAPI-Key": apiKey
         },
         params: {
-            "q": keyword + "-!1900,2018-!0,5-!0,10-!" + genres + "-!Any-!Any-!Any-!gt100-!{downloadable}",
+            "q": keyword + "-!1900,2018-!0,5-!0,10-!" + genres + "-!Any-!Any-!Any-!gt100-!",
             "t": "ns",
             "cl": activeCountry,
             "st": "adv",

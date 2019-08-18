@@ -12,7 +12,7 @@ const ListItem = (props) => {
     if (props.index !== props.length) {
         listClasses += " mb-4 border-gray-900"
     } else {
-        listClasses += " border-white"
+        listClasses += " border-gray-800"
     }
 
     return (

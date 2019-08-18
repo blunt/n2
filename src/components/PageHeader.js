@@ -7,6 +7,7 @@ const PageHeader = (props) => {
             keyword={props.keyword}
             keywordChange={props.setKeyword}
             handleKeyDown={props.handleKeyDown}
+            handleClearSearch={props.handleClearSearch}
         />
     )
 }

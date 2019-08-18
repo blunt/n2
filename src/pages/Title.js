@@ -98,16 +98,18 @@ const Title = (props) => {
                                 label={"Watch trailer"}
                             />
                             <div className={"ml-auto"}>
-                                <Button
-                                    type={"secondary"}
-                                    link={imdbUrl(content.imdbinfo.imdbid)}
-                                >
-                                    <img
-                                        src={IMDb}
-                                        className={"icon-button"}
-                                        alt={content.nfinfo.title + " on IMDb"}
-                                    />
-                                </Button>
+                                {content.imdbinfo.imdbid &&
+                                    <Button
+                                        type={"secondary"}
+                                        link={imdbUrl(content.imdbinfo.imdbid)}
+                                    >
+                                        <img
+                                            src={IMDb}
+                                            className={"icon-button"}
+                                            alt={content.nfinfo.title + " on IMDb"}
+                                        />
+                                    </Button>
+                                }
                                 <Button
                                     type={"secondary"}
                                     link={rottenUrl(content.nfinfo.title)}
@@ -122,58 +124,60 @@ const Title = (props) => {
                         </div>
                     </section>
                 </div>
-                <section className={"border-b border-gray-800"}>
-                    {content.people.map((item) => {
-                        return (
-                            item.director !== undefined &&
+                {content.people.length > 0 &&
+                    <section className={"border-b border-gray-800"}>
+                        {content.people.map((item) => {
+                            return (
+                                item.director !== undefined &&
                                 item.director.length > 0 &&
-                                    <PeopleItem key={item.director} label={"Director"}>
-                                        {item.director.map((item) => {
-                                            return (
-                                                <li key={item} className={"w-1/2 pr-4"}>{item}</li>
-                                            )
-                                        })
-                                        }
-                                    </PeopleItem>
-                        )
-                    })
-                    }
-                    {content.people.map((item) => {
-                        return (
-                            item.creator !== undefined &&
+                                <PeopleItem key={item.director} label={"Director"}>
+                                    {item.director.map((item) => {
+                                        return (
+                                            <li key={item} className={"w-1/2 pr-4"}>{item}</li>
+                                        )
+                                    })
+                                    }
+                                </PeopleItem>
+                            )
+                        })
+                        }
+                        {content.people.map((item) => {
+                            return (
+                                item.creator !== undefined &&
                                 item.creator.length > 0 &&
-                                    <PeopleItem key={item.creator} label={"Creator(s)"}>
-                                        {item.creator.map((item) => {
-                                            return (
-                                                <li key={item} className={"w-1/2 pr-4"}>{item}</li>
-                                            )
-                                        })
-                                        }
-                                    </PeopleItem>
-                        )
-                    })
-                    }
-                    {content.people.map((item) => {
-                        return (
-                            item.actor !== undefined &&
+                                <PeopleItem key={item.creator} label={"Creator(s)"}>
+                                    {item.creator.map((item) => {
+                                        return (
+                                            <li key={item} className={"w-1/2 pr-4"}>{item}</li>
+                                        )
+                                    })
+                                    }
+                                </PeopleItem>
+                            )
+                        })
+                        }
+                        {content.people.map((item) => {
+                            return (
+                                item.actor !== undefined &&
                                 item.actor.length > 0 &&
-                                    <PeopleItem key={item.actor} label={"Actor(s)"}>
-                                        {item.actor.map((item) => {
-                                            return (
-                                                <li key={item} className={"w-1/2 pr-4"}>{item}</li>
-                                            )
-                                        })
-                                        }
-                                    </PeopleItem>
-                        )
-                    })
-                    }
-                </section>
-                <section className={"py-6 border-b border-gray-800 mb-6"}>
-                    {content.imdbinfo.plot &&
-                        <p>{content.imdbinfo.plot.replace(/&amp;#39;/g,"'")}</p>
-                    }
-                </section>
+                                <PeopleItem key={item.actor} label={"Actor(s)"}>
+                                    {item.actor.map((item) => {
+                                        return (
+                                            <li key={item} className={"w-1/2 pr-4"}>{item}</li>
+                                        )
+                                    })
+                                    }
+                                </PeopleItem>
+                            )
+                        })
+                        }
+                    </section>
+                }
+                {content.imdbinfo.plot &&
+                    <section className={"py-6 border-b border-gray-800 mb-6"}>
+                        <p>{content.imdbinfo.plot.replace(/&amp;#39;/g, "'")}</p>
+                    </section>
+                }
             </article>
         )
     )
