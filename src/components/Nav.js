@@ -61,7 +61,7 @@ const Nav = (props) => {
     }, [filteredGenres, genres]);
 
     return (
-        <header className={"flex flex-col p-6 md:sticky top-0 h-screen md:w-1/4 w-full"}>
+        <header className={"flex flex-col px-6 pb-6 pt-4 md:sticky top-0 h-screen md:w-1/4 w-full"}>
             <div>
                 <h1 className={"text-sm"}>
                     <div
@@ -71,7 +71,7 @@ const Nav = (props) => {
                         N²
                     </div>
                 </h1>
-                <h2 className={"text-2xl leading-tight max-w-xs my-8"}>The fastest way to find something to watch on Netflix.</h2>
+                <h2 className={"text-xl leading-tight max-w-xs my-6 py-1"}>The fastest way to find something to watch on Netflix.</h2>
             </div>
             <div className={"mb-4"}>
                 {!loading &&
