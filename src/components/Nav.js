@@ -71,7 +71,7 @@ const Nav = (props) => {
                         N²
                     </div>
                 </h1>
-                <h2 className={"text-xl leading-tight max-w-xs my-6 py-1"}>The fastest way to find something on Netflix.</h2>
+                <h2 className={"text-xl leading-tight font-semibold max-w-xs my-6 py-1"}>The fastest way to find something on Netflix.</h2>
             </div>
             <div className={"mb-4"}>
                 {!loading &&

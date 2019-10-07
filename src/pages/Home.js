@@ -8,9 +8,10 @@ import List from "../components/List";
 import PageHeader from "../components/PageHeader";
 import Nav from "../components/Nav";
 import Title from "./Title";
-import RemoveIcon from '../assets/images/remove.svg';
 
 const Home = (props) => {
+
+    const path = '/n2';
 
     const [newContent, setNewContent] = useState([]);
     const [activeCountry, setActiveCountry] = useState("ca");
@@ -42,6 +43,7 @@ const Home = (props) => {
 
     const getSearchResults = (keyword, genres, activeCountry) => {
         setLoading(true);
+        history.push(path);
         getResults(keyword, genres, activeCountry).then((content) => {
             try {
                 setNewContent(content);
@@ -89,7 +91,7 @@ const Home = (props) => {
         const titleId = event.target.getAttribute('data-id')
         setIsTitle(true);
         setTitle(titleId);
-        history.push('/n2/#/titles/' + titleId, { id: titleId });
+        history.push(path + '/#/titles/' + titleId, { id: titleId });
     }
 
 
@@ -113,7 +115,7 @@ const Home = (props) => {
     */
     const handleHome = (event) => {
         setIsTitle(false);
-        history.push('/n2');
+        history.push(path);
     }
 
     /*
@@ -145,10 +147,12 @@ const Home = (props) => {
         if (count > 0) {
             setSearching(true);
             setLoading(true);
+            history.push(path);
         } else if (count === 0) {
             setSearching(false);
             setLoading(false);
             getHomeContent(activeCountry);
+            history.push(path);
         }
 
     }

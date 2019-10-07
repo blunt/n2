@@ -40,16 +40,33 @@ const ListItem = (props) => {
                 <div onClick={props.handleTitle}>
                     <h3
                         data-id={props.item.netflixid}
-                        className={"text-xl font-medium mb-2 border-b border-transparent hover:border-white inline-block cursor-pointer"}
+                        className={"text-xl font-semibold mb-2 border-b border-transparent hover:border-white inline-block cursor-pointer"}
                         dangerouslySetInnerHTML={{__html: props.item.title}}
                     />
                 </div>
                 <div className={"flex flex-grow"}>
                     <div className={"flex flex-col pr-8"}>
                         <p
-                            className={"mb-4 text-gray-500"}
+                            className={"mb-3 text-gray-500"}
                             dangerouslySetInnerHTML={{__html: trim(props.item.synopsis)}}
                         />
+                        <div className={"flex text-gray-500"}>
+                            {props.item.released &&
+                                <p> {props.item.released}</p>
+                            }
+                            {props.item.runtime &&
+                                <div className={"flex"}>
+                                    <span className={"inline-block mx-1"}>·</span>
+                                    <p> {props.item.runtime}</p>
+                                </div>
+                            }
+                            {props.item.rating > 0 &&
+                                <div className={"flex"}>
+                                    <span className={"inline-block mx-1"}>·</span>
+                                    <p className={"mr-3"}> {props.item.rating}</p>
+                                </div>
+                            }
+                        </div>
                         <div className={"mt-auto"}>
                             <Button
                                 link={trailerUrl(props.item.title)}
@@ -64,17 +81,6 @@ const ListItem = (props) => {
                                 dataId={props.item.netflixid}
                             />
                         </div>
-                    </div>
-                    <div className={"text-right text-gray-500 leading-tight text-sm"}>
-                        {props.item.rating > 0 &&
-                            <p>{props.item.rating}</p>
-                        }
-                        {props.item.runtime &&
-                            <p>{props.item.runtime}</p>
-                        }
-                        {props.item.released &&
-                            <p>{props.item.released}</p>
-                        }
                     </div>
                 </div>
             </figcaption>

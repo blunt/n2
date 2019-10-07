@@ -61,7 +61,7 @@ const Title = (props) => {
                     </figure>
                     <section className={"w-4/6 pl-6 flex flex-col"}>
                         <div>
-                            <h1 className={"text-2xl font-medium mb-4"}>
+                            <h1 className={"text-2xl font-semibold mb-4"}>
                                 <a
                                     className={"inline-block border-b border-transparent hover:border-white"}
                                     href={netflixUrl(content.nfinfo.netflixid)}
@@ -72,15 +72,15 @@ const Title = (props) => {
                                 </a>
                             </h1>
                             <section className={"flex border-t border-b border-gray-900 py-3 mb-4"}>
-                                {content.imdbinfo.rating &&
-                                    content.imdbinfo.rating > 0 &&
-                                        <DetailItem label={"IMDb Rating"} item={content.imdbinfo.rating}/>
+                                {content.nfinfo.released &&
+                                    <DetailItem label={"Year Released"} item={content.nfinfo.released}/>
                                 }
                                 {content.imdbinfo.runtime &&
                                     <DetailItem label={"Duration"} item={content.imdbinfo.runtime}/>
                                 }
-                                {content.nfinfo.released &&
-                                    <DetailItem label={"Year Released"} item={content.nfinfo.released}/>
+                                {content.imdbinfo.rating &&
+                                    content.imdbinfo.rating > 0 &&
+                                        <DetailItem label={"IMDb Rating"} item={content.imdbinfo.rating + "/10"}/>
                                 }
                             </section>
                             <p
